@@ -1,45 +1,105 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Quahog City Council Bulletin Board
 
-Welcome USER_NAME,
+## The Online Bulletin Board project of the fictional city of Quahog
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+The purpose of the project is to create an online platform for the citizens and the council to post ideas, announcements or advertisements to- much like a real-life bulletin board. 
 
-## Gitpod Reminders
+My aim with the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Please see the link to the live page below:
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
+## UX
 
-Another blue button should appear to click: *Open Browser*.
+The main benefit for the user is that they can easily get involved and contribute to the life of their hometown. They can look for updates from the local council and start a conversation with them and other citizens; they can post private ads and invitations to events, clubs, goups and so on. They can offer and ask for help thereby strengthening the ties between the community members.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User stories
 
-A blue button should appear to click: *Make Public*,
+As a user I want to create new posts in different categories
 
-Another blue button should appear to click: *Open Browser*.
+As a user I want to upload photos to my posts.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+As a user I want to be able to edit or delete my posts.
 
-## Updates Since The Instructional Video
+As a user I want to see announcements created by the city council.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+As a user I want to see what other users posted in each category.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+As a user I want to be able to leave comments under other user's posts.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+As a user I want to be able to save posts that I find interesting and view them in my profile page.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+As a user I want to see how many people saved each post. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+As a user I want to see when each post was created.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+As a user who has admin right I want to be able to add a new category if needed.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+As a user who is in a hurry I want to be able to filter the posts in each category for certain keywords.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+As a user who is not a resident would like to see what's going on in the city anyway.
 
---------
+As a user who would like to get in touch with the Council directly I am interested in the contact details of the City hall.
 
-Happy coding!
+## Wireframes
+
+
+## Features
+
+### Existing Features
+
+
+### Features left to implement
+
+
+
+
+## Technologies Used
+
+HTML5 
+
+CSS3 
+
+JavaScript
+
+Python3, Flask framework
+
+Jinja templating engine 
+
+Materialize style library
+
+MongoDB
+
+Balsamiq for creating wireframes
+
+Font Awesome
+
+Google Fonts
+
+## Testing
+
+### Testing in different browsers
+
+
+
+### Testing against the user stories
+
+
+
+### Validation
+
+
+## Problems encountered
+
+
+## Deployment
+
+## Credits
+
+### Content
+
+
+### Media
+
+
+### Acknowledgements
