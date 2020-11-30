@@ -13,10 +13,13 @@
         <label for="password">Password</label>
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block btn-login font-weight-bold mb-2" type="submit">Sign in</button>
+    <button class="" type="submit">Sign in</button>
 </form>
 
-<p class="login-register text-center">No account yet? <a href="{{url_for('register')}}"><strong>Register here!</strong></a></p>
+<p class="login-register text-center">No account yet? 
+    <a href="{{url_for('register')}}"><br><strong>Register here!</strong></br>
+    </a>
+</p>
 
 <!-- flash message to display when login details are incorrect-->
 {% with messages = get_flashed_messages() %} 

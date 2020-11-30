@@ -1,0 +1,26 @@
+.nav-wrapper{
+    font-family: 'Delius', cursive;
+}
+nav.brand-logo{
+    font-size:50px;
+    color:#F8E71C;
+}
+nav ul li{
+    margin: 5px 30px;
+    color:#F8E71C;
+}
+body{
+    font-family:'Montserrat', sans-serif;
+}
+h3{
+    font-family:'Montserrat', sans-serif;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
