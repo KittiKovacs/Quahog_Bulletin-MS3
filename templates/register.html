@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h5 class="center-align">Register as new user to join the conversation!</h5>
+
+<div class="row">
+	<form class="col s12 m6 offset-m2" method="POST" action="{{ url_for('register') }}">
+		<div class="card-panel">
+            <!-- First name -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="light-blue-text text-darken-4"></i>
+					<input id="first_name" name="first_name" type="text" minlength="1"
+                            maxlength="25" pattern="^[a-zA-Z]{1,25}$" class="validate" required>
+					<label for="first_name">First Name</label>
+				</div>
+			</div>
+            <!-- Last name -->
+            <div class="row">
+				<div class="input-field col s12">
+					<i class="light-blue-text text-darken-4"></i>
+					<input id="last_name" name="last_name" type="text" minlength="1"
+                            maxlength="25" pattern="^[a-zA-Z]{1,25}$" class="validate" required>
+					<label for="last_name">Last Name</label>
+				</div>
+			</div>
+            <!-- House number -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="light-blue-text text-darken-4"></i>
+					<input id="house_number" name="house_number" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+					<label for="house_number">House name/number</label>
+				</div>
+			</div>
+            <!-- Street -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="light-blue-text text-darken-4"></i>
+					<input id="street" name="street" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+					<label for="street">Street</label>
+				</div>
+			</div>
+			<!-- username -->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="light-blue-text text-darken-4"></i>
+					<input id="username" name="username" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+					<label for="username">Username</label>
+				</div>
+			</div>
+			<!---password-->
+			<div class="row">
+				<div class="input-field col s12">
+					<i class=" light-blue-text text-darken-4"></i>
+					<input id="password" name="password" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+					<label for="password">Password</label>
+				</div>
+			</div>
+            <!--submit button-->
+			<div class="row">
+				<button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">Register <i class="fas fa-user-plus"></i>
+                </button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+{% endblock %}
