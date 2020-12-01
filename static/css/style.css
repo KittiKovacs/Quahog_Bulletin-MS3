@@ -1,17 +1,23 @@
 .nav-wrapper{
     font-family: 'Delius', cursive;
 }
-nav.brand-logo{
-    font-size:50px;
+footer{
+    font-family: 'Delius', cursive;
+}
+
+nav .brand-logo.right{
+    font-size:3em;
+    color:#F8E71C;
+    margin:0 20px;
+}
+nav ul a{
+    margin: 0 30px;
     color:#F8E71C;
 }
-nav ul li{
-    margin: 5px 30px;
-    color:#F8E71C;
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-body{
-    font-family:'Montserrat', sans-serif;
-}
+
 h3{
     font-family:'Montserrat', sans-serif;
 }
@@ -19,6 +25,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family:'Montserrat', sans-serif;
 }
 
 main {
