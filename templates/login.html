@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- form coming from template https://startbootstrap.com/snippets/sign-in-split/ and then modified-->
-<form method="POST" action="{{url_for('login')}}">
-    <div class="form-label-group">
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-        <label for="username">Username</label>
-    </div>
+<h4 class="center-align">Welcome back! Log in here</h4>
 
-    <div class="form-label-group">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-        <label for="password">Password</label>
-    </div>
-
-    <button class="" type="submit">Sign in</button>
-</form>
-
-<p class="login-register text-center">No account yet? 
-    <a href="{{url_for('register')}}"><br><strong>Register here!</strong></br>
-    </a>
-</p>
+<div class="row">
+        <form class="col s12 m6 offset-m3"  method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel #fffde7 yellow lighten-5">
+                <!-- username -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
+						<input id="username" name="username" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+						<label for="username">Username</label>
+					</div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+                        <input id="password" name="password" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+				<a type="submit" class="col s2 offset-s5 blue-text text-darken-2 center-align btn-flat #fdd835 yellow darken-1">Log in
+                </a>
+			</div>
+            </div>
+        </form>
+</div>
+<div class="row">
+	<p class="col center-align">No account yet?
+		<a href="{{url_for('register')}}"><strong>Register here!</strong>
+		</a>
+	</p>
+</div>
 
 <!-- flash message to display when login details are incorrect-->
 {% with messages = get_flashed_messages() %} 

@@ -18,6 +18,11 @@
 <body>
 	<header>
         <!--top navbar-->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li><a href="#!">three</a></li>
+        </ul>
         <nav class="nav-extended text-shadow #1a237e indigo darken-4">
 			<div class="nav-wrapper">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
@@ -26,15 +31,15 @@
 				<ul class="left hide-on-med-and-down">
                 		<li><a href="{{ url_for('index') }}">Home</a></li>
                         {% if session.user %}
-                            <li><a href="#">Profile</a></li>
+                            <li><a href="{{ url_for('profile') }}">Profile</a></li>
                             {% if session.user|lower == "admin"|lower %}
                                 <li><a href="#">Create new board</a></li>
                             {% endif %}
-                                <li><a href="#">Log out</a></li>
+                                <li><a href="{{ url_for('logout') }}">Log out</a></li>
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Log in</a></li>
 				        <li><a href="{{ url_for('register') }}">Register</a></li>
-				        <li><a href="#">Bulletin Boards</a></li>
+				        <li><a class="dropdown-trigger" href="{{ url_for('boards') }}" data-target="dropdown1">Bulletin Boards</a></li>
                         {% endif %}
 				</ul>
             </div>

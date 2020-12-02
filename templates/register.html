@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h5 class="center-align">Register as new user to join the conversation!</h5>
+<h4 class="center-align">Register to join the conversation!</h4>
 
 <div class="row">
-	<form class="col s12 m6 offset-m2" method="POST" action="{{ url_for('register') }}">
-		<div class="card-panel">
+	<form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
+		<div class="card-panel #fffde7 yellow lighten-5">
             <!-- First name -->
 			<div class="row">
 				<div class="input-field col s12">
-					<i class="light-blue-text text-darken-4"></i>
 					<input id="first_name" name="first_name" type="text" minlength="1"
                             maxlength="25" pattern="^[a-zA-Z]{1,25}$" class="validate" required>
 					<label for="first_name">First Name</label>
@@ -18,7 +17,6 @@
             <!-- Last name -->
             <div class="row">
 				<div class="input-field col s12">
-					<i class="light-blue-text text-darken-4"></i>
 					<input id="last_name" name="last_name" type="text" minlength="1"
                             maxlength="25" pattern="^[a-zA-Z]{1,25}$" class="validate" required>
 					<label for="last_name">Last Name</label>
@@ -27,43 +25,39 @@
             <!-- House number -->
 			<div class="row">
 				<div class="input-field col s12">
-					<i class="light-blue-text text-darken-4"></i>
-					<input id="house_number" name="house_number" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+					<input id="house_number" name="house_number" type="text" minlength="1"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{1,15}$" data-position="bottom" data-tooltip="Your address is required to prove residency" class="validate tooltipped" required>
 					<label for="house_number">House name/number</label>
 				</div>
 			</div>
             <!-- Street -->
 			<div class="row">
 				<div class="input-field col s12">
-					<i class="light-blue-text text-darken-4"></i>
-					<input id="street" name="street" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-					<label for="street">Street</label>
+					<input id="street" name="street" type="text" minlength="1"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{1,15}$" data-position="bottom" data-tooltip="Your address is required to prove residency" class="validate tooltipped" required>
+					<label for="street">Street name</label>
 				</div>
 			</div>
 			<!-- username -->
 			<div class="row">
 				<div class="input-field col s12">
-					<i class="light-blue-text text-darken-4"></i>
 					<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" data-position="bottom" data-tooltip="must be 5-15 characters ussing letters or numbers" class="validate tooltipped" required>
 					<label for="username">Username</label>
 				</div>
 			</div>
 			<!---password-->
 			<div class="row">
 				<div class="input-field col s12">
-					<i class=" light-blue-text text-darken-4"></i>
 					<input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" data-position="bottom" data-tooltip="must be 5-15 characters ussing letters or numbers" class="validate tooltipped" required>
 					<label for="password">Password</label>
 				</div>
 			</div>
             <!--submit button-->
 			<div class="row">
-				<button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">Register <i class="fas fa-user-plus"></i>
-                </button>
+				<a type="submit" class="col s2 offset-s5 blue-text text-darken-2 center-align btn-flat #fdd835 yellow darken-1">Register
+                </a>
 			</div>
 		</div>
 	</form>
