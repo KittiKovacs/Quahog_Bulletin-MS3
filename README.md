@@ -1,6 +1,6 @@
-# Quahog City Council Bulletin Board
+# Quahog City Council Bulletin Board  
 
-## The Online Bulletin Board project of the fictional city of Quahog
+## The Online Bulletin Board of the fictional city of Quahog                                          
 
 The purpose of the project is to create an online platform for the citizens and the council to post ideas, announcements or advertisements to- much like a real-life bulletin board. 
 
@@ -103,6 +103,43 @@ As a user who would like to get in touch with the Council directly I am interest
 
 ### Existing Features
 
+#### On all pages:
+
+- Navigation Bar: I have created the navigation bar using Materialize Nav bar with Icon Links and I have also included the Mobile Collapse Button. I added a dropdown option to one of the menu items.
+
+- Page title: The page title appears will in the navigation bar on the right throughout the entire website and acts as a link to the home page when clicked.
+
+- Mobile Collapse Button / Sidebar: The Mobile Collapse Button will appear on medium and small screens and shows the side navigation bar.
+
+- Tooltips: Materialize tooltips show up to give the user further explanation on the purpose of certain fields in the registration form and buttons.
+
+- Footer: from Materialize to include the contact details for the City Hall and copyright information.
+
+#### Login
+
+- Contains an input form where the users can enter their username and password.
+
+- Flash message appears if the username is not valid or if the password is incorrect.
+
+-"Register here" link below the form to get redirected to the registration page.
+
+#### Register
+
+- The app is accessible for read only to anyone, registered users have access to more functions such as creating, editing, saving and deleting posts as well as commenting. 
+
+- Contains an input form where the user can enter their details and choose a username and password. A tooltip over each line gives the user helpful tips.
+
+- Flash message appears if the chosen username is already in the database.
+
+- In order to store the passwords securely in MongoDB, the passwords have been hashed.
+
+
+#### Boards
+
+#### Profile
+
+#### Admin
+
 
 ### Features left to implement
 
@@ -111,25 +148,31 @@ As a user who would like to get in touch with the Council directly I am interest
 
 ## Technologies Used
 
-HTML5 
+- HTML5 
 
-CSS3 
+- CSS3 
 
-JavaScript
+- JavaScript
 
-Python3, Flask framework
+- Python3, Flask framework
 
-Jinja templating engine 
+-Jinja templating 
 
-Materialize style library
+- Materialize style library
 
-MongoDB
+- MongoDB
 
-Balsamiq for creating wireframes
+Schema
 
-Font Awesome
+![Schema](static/schema/Schema_MS3.jpg)
 
-Google Fonts
+- Heroku to deploy the project
+
+- Balsamiq for creating wireframes
+
+- Font Awesome
+
+- Google Fonts
 
 ## Testing
 
