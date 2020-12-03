@@ -43,6 +43,54 @@ As a user who would like to get in touch with the Council directly I am interest
 
 ## Wireframes
 
+Homepage
+
+![Homepage](static/wireframes/Index.png)
+![Homepage mobile1](static/wireframes/Index_mobile.png)
+![Homepage mobile2](static/wireframes/mobile_menu.png)
+
+Login
+
+![Login](static/wireframes/Login.png)
+![Login mobile](static/wireframes/Login_mobile.png)
+
+Register
+
+![Register](static/wireframes/registration.png)
+![Register mobile](static/wireframes/register_mobile.png)
+
+Profile
+
+![Profile](static/wireframes/Profile.png)
+![Profile mobile](static/wireframes/Profile_mobile.png)
+![Admin profile](static/wireframes/Admin_profile.png)
+
+Boards (Categories)
+
+![Boards](static/wireframes/Boards_Categories.png)
+![Boards mobile](static/wireframes/Boards_mobile.png)
+![Market](static/wireframes/Registered-Market.png)
+![Market mobile](static/wireframes/Registered-Market_mobile.png)
+![Council Announcements](static/wireframes/Registered-announcements.png)
+
+CRUD
+
+![Create post](static/wireframes/Create_post.png)
+![Create post mobile](static/wireframes/Create_post_mobile.png)
+
+![View post](static/wireframes/registered-view_post.png)
+![View post mobile](static/wireframes/registered-view_post_mobile.png)
+
+![Edit post](static/wireframes/Edit_post.png)
+![Edit post mobile](static/wireframes/Edit_post_mobile.png)
+
+![Delete post](static/wireframes/Delete_post.png)
+![Delete post mobile](static/wireframes/Delete_post_mobile.png)
+
+Admin functions
+![Announcement board-admin view](static/wireframes/Admin_Announcement.png)
+![Create new board](static/wireframes/Admin_New_Board.png)
+
 
 ## Features
 
