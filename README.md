@@ -8,10 +8,12 @@ My aim with the project is to create a full stack site that allows users to Crea
 
 Please see the link to the live page below:
 
+https://quahog-bulletin.herokuapp.com/
+
 
 ## UX
 
-The main benefit for the user is that they can easily get involved and contribute to the life of their hometown. They can look for updates from the local council and start a conversation with them and other citizens; they can post private ads and invitations to events, clubs, goups and so on. They can offer and ask for help thereby strengthening the ties between the community members.
+The registered user can easily get involved in and contribute to the life of their community. They can look for updates from the local council and start a conversation with them and other citizens; they can post ads and invitations to events, clubs, goups and so on. They can offer and ask for help thereby strengthening the ties between the community members.
 
 ## User stories
 
@@ -43,29 +45,29 @@ As a user who would like to get in touch with the Council directly I am interest
 
 ## Wireframes
 
-Homepage
+**Homepage**
 
 ![Homepage](static/wireframes/Index.png)
-![Homepage mobile1](static/wireframes/Index_mobile.png)
+![Homepage mobile1](static/wireframes/Index_mobile.png) 
 ![Homepage mobile2](static/wireframes/mobile_menu.png)
 
-Login
 
-![Login](static/wireframes/Login.png)
+**Login**
+
+![Login](static/wireframes/Login.png) 
 ![Login mobile](static/wireframes/Login_mobile.png)
 
-Register
+**Register**
 
-![Register](static/wireframes/registration.png)
-![Register mobile](static/wireframes/register_mobile.png)
+![Register](static/wireframes/registration.png) ![Register mobile](static/wireframes/register_mobile.png)
 
-Profile
+**Profile**
 
 ![Profile](static/wireframes/Profile.png)
 ![Profile mobile](static/wireframes/Profile_mobile.png)
 ![Admin profile](static/wireframes/Admin_profile.png)
 
-Boards (Categories)
+**Boards (Categories)**
 
 ![Boards](static/wireframes/Boards_Categories.png)
 ![Boards mobile](static/wireframes/Boards_mobile.png)
@@ -73,23 +75,28 @@ Boards (Categories)
 ![Market mobile](static/wireframes/Registered-Market_mobile.png)
 ![Council Announcements](static/wireframes/Registered-announcements.png)
 
-CRUD
+**CRUD**
+
+**Create post**
 
 ![Create post](static/wireframes/Create_post.png)
 ![Create post mobile](static/wireframes/Create_post_mobile.png)
 
+**View post**
 ![View post](static/wireframes/registered-view_post.png)
 ![View post mobile](static/wireframes/registered-view_post_mobile.png)
 
+**Edit post**
 ![Edit post](static/wireframes/Edit_post.png)
 ![Edit post mobile](static/wireframes/Edit_post_mobile.png)
 
+**Delete post**
 ![Delete post](static/wireframes/Delete_post.png)
 ![Delete post mobile](static/wireframes/Delete_post_mobile.png)
 
-Admin functions
+**Admin functions**
 ![Announcement board-admin view](static/wireframes/Admin_Announcement.png)
-![Create new board](static/wireframes/Admin_New_Board.png)
+![Create new board](static/wireframes/Admin_new_board.png)
 
 
 ## Features
