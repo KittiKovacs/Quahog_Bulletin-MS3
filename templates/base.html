@@ -41,7 +41,7 @@
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Log in</a></li>
 				        <li><a href="{{ url_for('register') }}">Register</a></li>
-				        <li><a class="dropdown-trigger" href="" data-target="dropdown1">Bulletin Boards</a></li>
+				        <li><a href="{{ url_for('boards') }}"><a class="dropdown-trigger" href="" data-target="dropdown1">Bulletin Boards</a></li>
                         {% endif %}
 				</ul>
             </div>
@@ -58,7 +58,7 @@
                 {% else %}
                     <li><a href="{{ url_for('login') }}"><img src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/> Log in</a></li>
 				    <li><a href="{{ url_for('register') }}"><img src="https://img.icons8.com/color/48/000000/add-user-group-woman-man-skin-type-7.png"/> Register</a></li>
-                    <li><a href="#"><img src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
+                    <li><a href="{{ url_for('boards') }}"><img src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
                 {% endif %}
                 <li><a class="sidenav-close waves-effect waves-light btn-small #1a237e indigo darken-4" href="#!">Close</a></li>
 		</ul>

@@ -23,6 +23,9 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+@app.route("/boards")
+def boards():
+    return render_template("boards.html")
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -85,7 +88,7 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
-    
+
     if session["user"]:
         return render_template("profile.html", username=username)
 
@@ -98,7 +101,6 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
