@@ -4,7 +4,41 @@
 <div class="center-align">
     <img src="{{url_for('static', filename='img/quahog-city-hall.png')}}" width="300" alt="city_hall">
 </div>
-<h3 class="center-align"> Welcome to the virtual bulletin board of Quahog city!</h3>
+
+<h3 class="center-align dark-blue-text text-darken-2"> Welcome to the virtual bulletin board of Quahog city!</h3>
+
+<div class="row">
+    <div class="col">
+        <p> This is an online forum that gives You a chance to join the conversation about our beloved City. 
+        Here, we can all share our thoughts on current local news, events and share information with each other!
+        </p>
+    </div>
+</div>  
+<div class="row">
+    <div class="col s12">
+    <p> If you would like to:</p>
+        <ul class="center-align">
+            <li>Read public announcements</li>
+            <li>Make suggestions to improve Quahog</li>
+            <li>Check what's on or invite people for an event</li>
+            <li>Ask for help from fellow citizens</li>
+            <li>Sell something you don't need </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+        <p> This is the right place for you!
+        </p>
+</div> 
+<div class="container center-align">
+	    <a href="{{url_for('login') }}" class="col btn #fdd835 yellow darken-1 login">Log in</a>
+</div>
+<div class="row">
+	<p class="col">No account yet?
+		<a href="{{url_for('register')}}" class="dark-blue-text text-darken-2"><strong>Register here!</strong>
+		</a>
+	</p>
+</div>
 
 
 {% endblock %}
