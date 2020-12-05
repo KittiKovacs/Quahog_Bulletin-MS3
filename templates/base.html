@@ -19,9 +19,11 @@
 	<header>
         <!--top navbar-->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li><a href="#!">three</a></li>
+            <li><a href="#!">Announcements</a></li>
+            <li><a href="#!">Boards</a></li>
+            <li><a href="#!">Events</a></li>
+            <li><a href="#!">Help</a></li>
+            <li><a href="#!">Market</a></li>
         </ul>
         <nav class="nav-extended text-shadow #1a237e indigo darken-4">
 			<div class="nav-wrapper">
@@ -31,32 +33,32 @@
 				<ul class="left hide-on-med-and-down">
                 		<li><a href="{{ url_for('index') }}">Home</a></li>
                         {% if session.user %}
-                            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                            <li><a href="#">Profile</a></li>
                             {% if session.user|lower == "admin"|lower %}
                                 <li><a href="#">Create new board</a></li>
                             {% endif %}
-                                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                                <li><a href="#">Log out</a></li>
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Log in</a></li>
 				        <li><a href="{{ url_for('register') }}">Register</a></li>
-				        <li><a class="dropdown-trigger" href="{{ url_for('boards') }}" data-target="dropdown1">Bulletin Boards</a></li>
+				        <li><a class="dropdown-trigger" href="" data-target="dropdown1">Bulletin Boards</a></li>
                         {% endif %}
 				</ul>
             </div>
         </nav>
 <!--mobile sidenav-->
 		<ul class="sidenav" id="mobile-demo">
-                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('index') }}"><img src="https://img.icons8.com/cute-clipart/64/000000/home.png"/> Home</a></li>
                 {% if session.user %}
-                    <li><a href="#"><i class="fas fa-user-alt"></i>Profile</a></li>
+                    <li><a href="#"><img src="https://img.icons8.com/color/48/000000/male-female-user-group.png"/> Profile</a></li>
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="#"><i class="fas fa-plus-circle"></i>Create new board</a></li>
                     {% endif %}
-                    <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+                    <li><a href="#"><img src="https://img.icons8.com/color/48/000000/logout-rounded-left--v1.png"/> Log out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Log in</a></li>
-				    <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
-                    <li><a href="#"><i class="fas fa-chalkboard"></i> Bulletin Boards</a></li>
+                    <li><a href="{{ url_for('login') }}"><img src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/> Log in</a></li>
+				    <li><a href="{{ url_for('register') }}"><img src="https://img.icons8.com/color/48/000000/add-user-group-woman-man-skin-type-7.png"/> Register</a></li>
+                    <li><a href="#"><img src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
                 {% endif %}
                 <li><a class="sidenav-close waves-effect waves-light btn-small #1a237e indigo darken-4" href="#!">Close</a></li>
 		</ul>
