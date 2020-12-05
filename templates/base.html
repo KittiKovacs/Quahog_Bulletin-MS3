@@ -17,8 +17,9 @@
 
 <body>
 	<header>
-        <!--top navbar-->
-        <ul id="dropdown1" class="dropdown-content">
+    <!--top navbar-->
+        <!--dropdown-->
+        <ul id="dropdown1" class="dropdown-content #1a237e indigo darken-4">
             <li><a href="#!">Announcements</a></li>
             <li><a href="#!">Boards</a></li>
             <li><a href="#!">Events</a></li>
@@ -41,7 +42,7 @@
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Log in</a></li>
 				        <li><a href="{{ url_for('register') }}">Register</a></li>
-				        <li><a href="{{ url_for('boards') }}"><a class="dropdown-trigger" href="" data-target="dropdown1">Bulletin Boards</a></li>
+				        <li><a href="{{ url_for('boards') }}" class="dropdown-trigger" data-target="dropdown1"> Bulletin Boards<i class="fas fa-caret-down"></i></a></li>
                         {% endif %}
 				</ul>
             </div>
