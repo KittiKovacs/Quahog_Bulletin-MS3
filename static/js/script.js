@@ -6,4 +6,5 @@ $(document).ready(function(){
         coverTrigger: false,
         hover:true
     });
+     $('.modal').modal();
   });
