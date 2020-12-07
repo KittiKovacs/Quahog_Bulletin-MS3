@@ -23,9 +23,36 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+
 @app.route("/boards")
 def boards():
     return render_template("boards.html")
+
+
+@app.route("/announcements")
+def announcements():
+    return render_template("announcements.html")
+
+
+@app.route("/suggestions")
+def suggestions():
+    return render_template("suggestions.html")
+
+
+@app.route("/events")
+def events():
+    return render_template("events.html")
+
+
+@app.route("/help")
+def help():
+    return render_template("help.html")
+
+
+@app.route("/market")
+def market():
+    return render_template("market.html")
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

@@ -20,11 +20,12 @@
     <!--top navbar-->
         <!--dropdown-->
         <ul id="dropdown1" class="dropdown-content #1a237e indigo darken-4">
-            <li><a href="#!">Announcements</a></li>
-            <li><a href="#!">Boards</a></li>
-            <li><a href="#!">Events</a></li>
-            <li><a href="#!">Help</a></li>
-            <li><a href="#!">Market</a></li>
+            <li><a href="{{ url_for('boards') }}">See all</a></li>
+            <li><a href="{{ url_for('announcements') }}">Announcements</a></li>
+            <li><a href="{{ url_for('suggestions') }}">Suggestions</a></li>
+            <li><a href="{{ url_for('events') }}">Events</a></li>
+            <li><a href="{{ url_for('help') }}">Help</a></li>
+            <li><a href="{{ url_for('market') }}">Market</a></li>
         </ul>
         <nav class="nav-extended text-shadow #1a237e indigo darken-4">
 			<div class="nav-wrapper">
@@ -42,26 +43,26 @@
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Log in</a></li>
 				        <li><a href="{{ url_for('register') }}">Register</a></li>
-				        <li><a href="{{ url_for('boards') }}" class="dropdown-trigger" data-target="dropdown1"> Bulletin Boards<i class="fas fa-caret-down"></i></a></li>
+				        <li><a class="dropdown-trigger" data-target="dropdown1"> Topics-Bulletin Boards<i class="fas fa-caret-down"></i></a></li>
                         {% endif %}
 				</ul>
             </div>
         </nav>
 <!--mobile sidenav-->
-		<ul class="sidenav" id="mobile-demo">
-                <li><a href="{{ url_for('index') }}"><img src="https://img.icons8.com/cute-clipart/64/000000/home.png"/> Home</a></li>
+		<ul class="sidenav #1a237e indigo darken-4" id="mobile-demo">
+                <li><a href="{{ url_for('index') }}"><img class="sidenav-icon" src="https://img.icons8.com/cute-clipart/64/000000/home.png"/> Home</a></li>
                 {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}"><img src="https://img.icons8.com/color/48/000000/male-female-user-group.png"/> Profile</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/male-female-user-group.png"/> Profile</a></li>
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="#"><i class="fas fa-plus-circle"></i>Create new board</a></li>
                     {% endif %}
-                    <li><a href="{{ url_for('logout') }}"><img src="https://img.icons8.com/color/48/000000/logout-rounded-left--v1.png"/> Log out</a></li>
+                    <li><a href="{{ url_for('logout') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/logout-rounded-left--v1.png"/> Log out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}"><img src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/> Log in</a></li>
-				    <li><a href="{{ url_for('register') }}"><img src="https://img.icons8.com/color/48/000000/add-user-group-woman-man-skin-type-7.png"/> Register</a></li>
-                    <li><a href="{{ url_for('boards') }}"><img src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
+                    <li><a href="{{ url_for('login') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/> Log in</a></li>
+				    <li><a href="{{ url_for('register') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/add-user-group-woman-man-skin-type-7.png"/> Register</a></li>
+                    <li><a href="{{ url_for('boards') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
                 {% endif %}
-                <li><a class="sidenav-close waves-effect waves-light btn-small #1a237e indigo darken-4" href="#!">Close</a></li>
+                <li><a class="sidenav-close waves-effect waves-light btn buttons #fdd835 yellow darken-1" href="#!">Close</a></li>
 		</ul>
 	</header>
 
@@ -71,7 +72,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                        <h4 class="center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
