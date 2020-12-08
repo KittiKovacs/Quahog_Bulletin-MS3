@@ -53,6 +53,11 @@ def help():
 def market():
     return render_template("market.html")
 
+@app.route("/posts")
+def posts():
+    posts = list(mongo.db.posts.find())
+    return render_template("boards.html", posts=posts)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -128,6 +133,27 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/create_post", methods=["GET", "POST"])
+def create_post():
+    if request.method == "POST":
+        post = {
+            "category_name": request.form.get("category_name"),
+            "title": request.form.get("title"),
+            "description": request.form.get("description"),
+            "saved": saved,
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(post)
+        flash("Post created")
+        return redirect(url_for("profile"))
+
+@app.route("/get_categories")
+def get_categories():
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("profile.html", categories=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
