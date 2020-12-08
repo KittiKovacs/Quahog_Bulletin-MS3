@@ -145,9 +145,31 @@ def create_post():
             "saved": saved,
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(post)
+        mongo.db.posts.insert_one(post)
         flash("Post created")
-        return redirect(url_for("profile"))
+        return redirect(url_for("posts"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("profile.html", categories=categories)
+
+
+@app.route("/edit_post/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "title": request.form.get("title"),
+            "description": request.form.get("description"),
+            "saved": saved,
+            "created_by": session["user"]
+        }
+        mongo.db.posts.update({"_id":ObjectId(post_id)}, submit)
+        flash("Post updated!")
+
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("profile.html", post=post, categories=categories)
+
 
 @app.route("/get_categories")
 def get_categories():
