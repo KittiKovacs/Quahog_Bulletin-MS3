@@ -16,6 +16,9 @@ nav ul a{
     margin: 0 30px;
     color:#F8E71C;
 }
+nav ul a:hover{
+    background-color:#0b8eda;
+}
 
 .dropdown-content li{
     color:#F8E71C;
@@ -27,7 +30,6 @@ nav ul a{
     margin:0;
     transition: background-color .3s;
 }
-
 
 .sidenav li>a{
     color:#F8E71C;
@@ -80,4 +82,7 @@ main {
 }
 .card-text{
     font-size:15px;
+}
+.card .card-image img{
+    object-fit:scale-down;
 }
