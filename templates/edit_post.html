@@ -10,7 +10,7 @@
 </div>
     <div class="row container">
         <div class="col s12">
-                <form method="POST" action="{{ url_for('create_post') }}">
+                <form method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
         <!--category selection-->
 		            <div class="input-field">
                         <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
@@ -38,12 +38,9 @@
                         <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
                     </div>
         <!--buttons -->
-                    <div class="row center-align">   
-                        <div class="col s6">
-                            <button type="submit" class="btn buttons #fdd835 yellow darken-1">Submit</button>
-                        </div>
-                        <div class="col s6">
-                            <button type="reset" class="btn buttons #0b8eda">Clear</button>
+                    <div class="row">   
+                        <div class="col s6 center-align">
+                            <button type="submit" class="btn buttons #fdd835 yellow darken-1">Edit</button>
                         </div>
                     </div>
             </form>
