@@ -53,6 +53,7 @@ def help():
 def market():
     return render_template("market.html")
 
+
 @app.route("/posts")
 def posts():
     posts = list(mongo.db.posts.find())
@@ -138,6 +139,7 @@ def logout():
 @app.route("/create_post", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
+        saved= "on" if request.form.get("saved") else "off"
         post = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
@@ -147,7 +149,8 @@ def create_post():
         }
         mongo.db.posts.insert_one(post)
         flash("Post created")
-        return redirect(url_for("profile"))
+        return redirect(url_for(
+                        "profile", username=session["user"]))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_post.html", categories=categories)
@@ -156,6 +159,7 @@ def create_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
+        saved= "on" if request.form.get("saved") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
