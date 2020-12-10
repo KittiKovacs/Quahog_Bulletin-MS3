@@ -164,7 +164,7 @@ As a user who would like to get in touch with the Council directly I am interest
 
 Schema
 
-![Schema](static/schema/Schema_MS3.jpg)
+![Schema](static/schema/Schema_MS3.JPG)
 
 - Heroku to deploy the project
 
