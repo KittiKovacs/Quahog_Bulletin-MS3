@@ -68,6 +68,7 @@ main {
 .flashes h4 {
     line-height: 2;
     background-color: #0b8eda;
+    width: 25%;
 }
 
 .card .card-title{

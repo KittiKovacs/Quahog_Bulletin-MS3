@@ -167,13 +167,20 @@ def edit_post(post_id):
             "saved": saved,
             "created_by": session["user"]
         }
-        mongo.db.posts.update({"_id":ObjectId(post_id)}, submit)
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post updated!")
         return redirect(url_for("posts"))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("profile.html", post=post, categories=categories)
+
+
+@app.route("/delete_post/<post_id>")
+def delete_post(post_id):
+    mongo.db.posts.remove({"_id": ObjectId(post_id)})
+    flash("Post deleted")
+    return redirect(url_for("posts"))
 
 
 @app.route("/get_categories")
