@@ -47,9 +47,9 @@ As a user who would like to get in touch with the Council directly I am interest
 
 **Homepage**
 
-![Homepage](static/wireframes/Index.png)
-![Homepage mobile1](static/wireframes/Index_mobile.png) 
-![Homepage mobile2](static/wireframes/mobile_menu.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index.png" width="400">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index_mobile.png" width="200"> 
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/mobile_menu.png" width="200">
 
 
 **Login**
