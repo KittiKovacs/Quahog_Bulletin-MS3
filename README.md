@@ -47,56 +47,49 @@ As a user who would like to get in touch with the Council directly I am interest
 
 **Homepage**
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index.png" width="400">
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index_mobile.png" width="200"> 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/mobile_menu.png" width="200">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index.png" width="400">   <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Index_mobile.png" width="200">   <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/mobile_menu.png" width="200">
 
 
 **Login**
 
-![Login](static/wireframes/Login.png) 
-![Login mobile](static/wireframes/Login_mobile.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Login.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Login_mobile.png" width="200">
 
 **Register**
 
-![Register](static/wireframes/registration.png) ![Register mobile](static/wireframes/register_mobile.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/registration.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/register_mobile.png" width="200">
 
 **Profile**
 
-![Profile](static/wireframes/Profile.png)
-![Profile mobile](static/wireframes/Profile_mobile.png)
-![Admin profile](static/wireframes/Admin_profile.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile_mobile.png" width="200"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Admin_profile.png" width="400">
 
 **Boards (Categories)**
 
-![Boards](static/wireframes/Boards_Categories.png)
-![Boards mobile](static/wireframes/Boards_mobile.png)
-![Market](static/wireframes/Registered-Market.png)
-![Market mobile](static/wireframes/Registered-Market_mobile.png)
-![Council Announcements](static/wireframes/Registered-announcements.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Boards_Categories.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Boards_mobile.png" width="200">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-Market.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-Market_mobile.png" width="200">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-announcements.png" width="400">
+
 
 **CRUD**
 
 **Create post**
 
-![Create post](static/wireframes/Create_post.png)
-![Create post mobile](static/wireframes/Create_post_mobile.png)
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Create_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Create_post_mobile.png" width="200">
 
 **View post**
-![View post](static/wireframes/registered-view_post.png)
-![View post mobile](static/wireframes/registered-view_post_mobile.png)
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/registered-view_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/registered-view_post_mobile.png" width="200">
 
 **Edit post**
-![Edit post](static/wireframes/Edit_post.png)
-![Edit post mobile](static/wireframes/Edit_post_mobile.png)
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Edit_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Edit_post_mobile.png" width="200">
 
 **Delete post**
-![Delete post](static/wireframes/Delete_post.png)
-![Delete post mobile](static/wireframes/Delete_post_mobile.png)
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Delete_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Delete_post_mobile.png" width="200">
 
 **Admin functions**
-![Announcement board-admin view](static/wireframes/Admin_Announcement.png)
-![Create new board](static/wireframes/Admin_new_board.png)
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Admin_Announcement.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Admin_new_board.png" width="400">
 
 
 ## Features
