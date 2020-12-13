@@ -3,12 +3,9 @@
 .nav-wrapper{
     font-family: 'Delius', cursive;
 }
-.page-footer{
-    color:#F8E71C;
-    font-family: 'Delius', cursive;
-}
+
 nav .brand-logo.right{
-    font-size:3em;
+    font-size:2em;
     color:#F8E71C;
     margin:0 20px;
 }
@@ -40,15 +37,7 @@ nav ul a:hover{
     padding: 5px;
 }
 
-p{
-    font-size: 1.5em;
-    text-align: justify;
-}
-ul li{
-    font-size: 1.5em;
-    list-style-type: circle;
-}
-
+/*--body--*/
 h3, h4, h5{
     font-family: 'Montserrat', sans-serif;
     margin: 80px 0;
@@ -59,10 +48,12 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family:'Montserrat', sans-serif;
+    font-size: 1.5em;
 }
 
-.center-align .front-image{
-    padding: 50px;
+#front-image{
+    padding-top: 80px;
+    width:400px
 }
 
 main {
@@ -72,9 +63,12 @@ main {
 .flashes h4 {
     line-height: 2;
     background-color: #0b8eda;
-    width: 25%;
+}
+.btn-large{
+    margin:20px 0;
 }
 
+/*--cards--*/
 .card .card-title{
     color: #1a237e;
     font-weight:500;
@@ -84,4 +78,14 @@ main {
 }
 .card .card-image img{
     object-fit:scale-down;
+}
+.page-footer{
+    color:#F8E71C;
+    font-family: 'Delius', cursive;
+    font-size:1rem;
+}
+footer h5{
+    color:#F8E71C;
+    font-family: 'Delius', cursive;
+    margin: 20px 0;
 }

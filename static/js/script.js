@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
     $('.tooltipped').tooltip();
+    $('#copyright').text(new Date().getFullYear());
     $(".dropdown-trigger").dropdown({
         coverTrigger: false,
         hover:true
