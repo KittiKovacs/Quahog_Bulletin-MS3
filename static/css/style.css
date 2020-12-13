@@ -61,6 +61,10 @@ body {
     font-family:'Montserrat', sans-serif;
 }
 
+.center-align .front-image{
+    padding: 50px;
+}
+
 main {
     flex: 1 0 auto;
 }

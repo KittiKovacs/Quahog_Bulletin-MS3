@@ -21,43 +21,20 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    categories = list(mongo.db.categories.find())
+    return render_template("index.html", categories=categories)
 
 
-@app.route("/boards")
+@app.route('/boards')
 def boards():
-    return render_template("boards.html")
+    return render_template('boards.html')
 
 
-@app.route("/announcements")
-def announcements():
-    return render_template("announcements.html")
-
-
-@app.route("/suggestions")
-def suggestions():
-    return render_template("suggestions.html")
-
-
-@app.route("/events")
-def events():
-    return render_template("events.html")
-
-
-@app.route("/help")
-def help():
-    return render_template("help.html")
-
-
-@app.route("/market")
-def market():
-    return render_template("market.html")
-
-
-@app.route("/posts")
-def posts():
-    posts = list(mongo.db.posts.find())
-    return render_template("boards.html", posts=posts)
+@app.route("/posts/<category>")
+def posts(category):
+    # category = mongo.db.categories.find()
+    posts = mongo.db.posts.find()
+    return render_template("categories.html", posts=posts)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -118,9 +95,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    username = mongo.db.users.find_one()
 
     if session["user"]:
         return render_template("profile.html", username=username)

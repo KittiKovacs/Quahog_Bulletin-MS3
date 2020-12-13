@@ -21,11 +21,9 @@
         <!--dropdown-->
         <ul id="dropdown1" class="dropdown-content #1a237e indigo darken-4">
             <li><a href="{{ url_for('boards') }}">See all</a></li>
-            <li><a href="{{ url_for('announcements') }}">Announcements</a></li>
-            <li><a href="{{ url_for('suggestions') }}">Suggestions</a></li>
-            <li><a href="{{ url_for('events') }}">Events</a></li>
-            <li><a href="{{ url_for('help') }}">Help</a></li>
-            <li><a href="{{ url_for('market') }}">Market</a></li>
+            {% for category in categories %}
+                <li><a href="{{ url_for('posts', category=category.category_name) }}">{{ category.category_name }}</a></li>
+            {% endfor %}
         </ul>
         <nav class="nav-extended #1a237e indigo darken-4">
 			<div class="nav-wrapper">
