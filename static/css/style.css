@@ -72,13 +72,28 @@ main {
 .card .card-title{
     color: #1a237e;
     font-weight:500;
+    font-size:15px;
 }
 .card-text{
+    font-size:15px;
+}
+em{
+   font-size:10px;
+   text-align:right;
+}
+.card-action{
     font-size:15px;
 }
 .card .card-image img{
     object-fit:scale-down;
 }
+.btn-small {
+    margin:0 30px;
+}
+#save {
+    margin:0 30px;
+}
+/*--footer--*/
 .page-footer{
     color:#F8E71C;
     font-family: 'Delius', cursive;

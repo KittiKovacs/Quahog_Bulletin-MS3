@@ -32,7 +32,6 @@ def boards():
 
 @app.route("/posts/<category>")
 def posts(category):
-    # category = mongo.db.categories.find()
     posts = mongo.db.posts.find()
     return render_template("categories.html", posts=posts)
 
