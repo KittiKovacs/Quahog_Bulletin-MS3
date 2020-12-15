@@ -40,4 +40,7 @@ validateMaterializeSelect();
         });
     }
 });
-
+/* toggle save-unsave button from https://www.w3schools.com/howto/howto_js_toggle_like.asp*/
+function myFunction(x) {
+      x.classList.toggle("fa-check");
+}

@@ -160,7 +160,7 @@ def delete_post(post_id):
 @app.route("/get_categories")
 def get_categories():
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("profile.html", categories=categories)
+    return render_template("boards.html", categories=categories)
 
 
 if __name__ == "__main__":

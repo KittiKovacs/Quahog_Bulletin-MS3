@@ -90,9 +90,20 @@ em{
 .btn-small {
     margin:0 30px;
 }
-#save {
+.fa-save {
     margin:0 30px;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
 }
+.fa-save:hover {
+  color: #0b8eda;
+}
+
+.card.small {
+    height: 250px;
+}
+
 /*--footer--*/
 .page-footer{
     color:#F8E71C;
@@ -104,3 +115,4 @@ footer h5{
     font-family: 'Delius', cursive;
     margin: 20px 0;
 }
+
