@@ -3,37 +3,29 @@
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <h4 class="center-align dark-blue-text text-darken-4">
-            My posts
-        </h4>
+        <h4 >My posts</h4>
     </div>
 </div>
 
 {% for post in posts %}
-<div class="row">
-    <div class="col s12 m6 l4">
+
+<div class="col s4">
         <div class="card small yellow lighten-5 hoverable">
             <div class="card-content">                
                 <p><em>Created by: {{ post.created_by }}</em></p>
-                    <span class="card-title ">{{ post.title }}</span>                
+                <span class="card-title ">{{ post.title }}</span>                
                 <p class="truncate card-text">{{ post.description }}</p>
             </div>
             <div>
                 <a class="card-action" href="#">View post</a>
             </div>
-            <div>
-                <img src="https://img.icons8.com/ultraviolet/40/000000/pin.png" href="#">
+            <div class="center-align">
+                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn-small red accent-4">Delete</a>
             </div>
         </div>
     </div>
-<div class="row">
-    <div class="col s3">
-        {% if session.user|lower == task.created_by|lower %}
-            <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-            <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn-small green accent-4">Delete</a>
-        {% endif %}
-    </div>
-</div>
+
 {% endfor %}  
 
 <!--Link to create new post-->
@@ -49,5 +41,25 @@
         </h4>
     </div>
 </div>
+
+{% for post in posts %}
+
+<div class="col s4">
+        <div class="card small yellow lighten-5 hoverable">
+            <div class="card-content">                
+                <p><em>Created by: {{ post.created_by }}</em></p>
+                <span class="card-title ">{{ post.title }}</span>                
+                <p class="truncate card-text">{{ post.description }}</p>
+            </div>
+            <div>
+                <a class="card-action" href="#">View post</a>
+            </div>
+            <div class="center-align">
+                <i onclick="myFunction(this)" class="fas fa-save"></i>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}  
 
 {% endblock %}

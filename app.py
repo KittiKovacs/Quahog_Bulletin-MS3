@@ -25,15 +25,22 @@ def index():
     return render_template("index.html", categories=categories)
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("boards.html", categories=categories)
+
+
 @app.route('/boards')
 def boards():
-    return render_template('boards.html')
+    return render_template('boards.html', )
 
 
 @app.route("/posts/<category>")
 def posts(category):
+    categories = list(mongo.db.categories.find())
     posts = mongo.db.posts.find()
-    return render_template("categories.html", posts=posts)
+    return render_template("categories.html", posts=posts, categories=categories)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -155,12 +162,6 @@ def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post deleted")
     return redirect(url_for("posts"))
-
-
-@app.route("/get_categories")
-def get_categories():
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("boards.html", categories=categories)
 
 
 if __name__ == "__main__":

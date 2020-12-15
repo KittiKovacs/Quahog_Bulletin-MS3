@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h4>1</h4>
+{% for title in categories %}
+
+    <h4>{{ title.category_name }}</h4>
+
+{% endfor %}
 
 {% for post in posts %}
 
