@@ -4,11 +4,12 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.tooltipped').tooltip();
     $('#copyright').text(new Date().getFullYear());
-    $(".dropdown-trigger").dropdown({
+    $('.dropdown-trigger').dropdown({
         coverTrigger: false,
         hover:true
     });
-     $('.modal').modal();
+    $('.fixed-action-btn').floatingActionButton();
+    $('.modal').modal();
 
   /*dropdown field validation from  taks manager mini project course material*/
 
@@ -40,7 +41,10 @@ validateMaterializeSelect();
         });
     }
 });
-/* toggle save-unsave button from https://www.w3schools.com/howto/howto_js_toggle_like.asp*/
-function myFunction(x) {
-      x.classList.toggle("fa-check");
-}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'right'
+    });
+  });

@@ -6,11 +6,12 @@
         <h4 >My posts</h4>
     </div>
 </div>
-
+<div class="row">
 {% for post in posts %}
 
-<div class="col s4">
-        <div class="card small yellow lighten-5 hoverable">
+    {% if session.user|lower == post.created_by|lower %}
+    
+        <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
             <div class="card-content">                
                 <p><em>Created by: {{ post.created_by }}</em></p>
                 <span class="card-title ">{{ post.title }}</span>                
@@ -24,16 +25,28 @@
                 <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn-small red accent-4">Delete</a>
             </div>
         </div>
-    </div>
+
+    {% endif %}
 
 {% endfor %}  
 
 <!--Link to create new post-->
-<div class="container">
-    <a class="waves-effect waves-light modal-trigger tooltipped" data-tooltip="Create new post" href="{{ url_for('create_post') }}">
+        <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+            <div class="card-content center-align">                
+                <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png"/>               
+            </div>
+            <div>
+                <a class="card-action" href="{{ url_for('create_post') }}">Create new post</a>
+            </div>
+        </div>
+
+<!--        <div class="col s12 m6 l4 ">
+            <a class="waves-effect waves-light modal-trigger tooltipped" data-tooltip="Create new post" href="{{ url_for('create_post') }}">
             <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png"/>
-    </a>
-</div>
+            </a>
+            </div>-->
+    </div>
+
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <h4 class="center-align dark-blue-text text-darken-4">

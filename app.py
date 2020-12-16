@@ -25,15 +25,10 @@ def index():
     return render_template("index.html", categories=categories)
 
 
-@app.route("/get_categories")
+@app.route('/get_categories')
 def get_categories():
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("boards.html", categories=categories)
-
-
-@app.route('/boards')
-def boards():
-    return render_template('boards.html', )
+    categories = list(mongo.db.categories.find())
+    return render_template('board.html', categories=categories)
 
 
 @app.route("/posts/<category>")
@@ -104,7 +99,9 @@ def profile(username):
     username = mongo.db.users.find_one()
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        categories = list(mongo.db.categories.find())
+        posts = mongo.db.posts.find()
+        return render_template("profile.html", username=username, posts=posts, categories=categories)
 
     return redirect(url_for("login"))
 

@@ -62,7 +62,6 @@ main {
 
 .flashes h4 {
     line-height: 2;
-    background-color: #0b8eda;
 }
 .btn-large{
     margin:20px 0;
@@ -87,21 +86,13 @@ em{
 .card .card-image img{
     object-fit:scale-down;
 }
-.btn-small {
-    margin:0 30px;
-}
-.fa-save {
-    margin:0 30px;
-    font-size: 30px;
-    cursor: pointer;
-    user-select: none;
-}
-.fa-save:hover {
-  color: #0b8eda;
-}
 
 .card.small {
     height: 250px;
+    padding:0 .75rem;
+}
+.fixed-action-btn{
+    position:relative;
 }
 
 /*--footer--*/

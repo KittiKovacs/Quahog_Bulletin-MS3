@@ -20,7 +20,7 @@
     <!--top navbar-->
         <!--dropdown-->
         <ul id="dropdown1" class="dropdown-content #1a237e indigo darken-4">
-            <li><a href="{{ url_for('boards') }}">See all</a></li>
+            <li><a href="{{ url_for('get_categories') }}">See all</a></li>
             {% for category in categories %}
                 <li><a href="{{ url_for('posts', category=category.category_name) }}">{{ category.category_name }}</a></li>
             {% endfor %}
@@ -58,7 +58,7 @@
                 {% else %}
                     <li><a href="{{ url_for('login') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/login-rounded-right.png"/> Log in</a></li>
 				    <li><a href="{{ url_for('register') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/add-user-group-woman-man-skin-type-7.png"/> Register</a></li>
-                    <li><a href="{{ url_for('boards') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
+                    <li><a href="{{ url_for('get_categories') }}"><img class="sidenav-icon" src="https://img.icons8.com/color/48/000000/pricing-structure.png"/> Bulletin Boards</a></li>
                 {% endif %}
                 <li><a class="sidenav-close waves-effect waves-light btn buttons #fdd835 yellow darken-1" href="#!">Close</a></li>
 		</ul>
