@@ -123,7 +123,8 @@ def create_post():
             "title": request.form.get("title"),
             "description": request.form.get("description"),
             "saved": saved,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "image_name": image_name.filename,
         }
         mongo.db.posts.insert_one(post)
         flash("Post created")

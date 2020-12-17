@@ -8,8 +8,8 @@ $(document).ready(function(){
         coverTrigger: false,
         hover:true
     });
-    $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
+    $('.fixed-action-btn').floatingActionButton();
 
   /*dropdown field validation from  taks manager mini project course material*/
 
@@ -43,8 +43,25 @@ validateMaterializeSelect();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
+    let elems = document.querySelectorAll('.fixed-action-btn');
+    let instances = M.FloatingActionButton.init(elems, {
       direction: 'right'
     });
   });
+
+// https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
+
+function previewFile() {
+  const preview = document.querySelector('.img-details img');
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}

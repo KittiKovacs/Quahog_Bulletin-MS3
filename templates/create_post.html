@@ -34,10 +34,36 @@
                             maxlength="500" required></textarea>
                         <label for="description">Description</label>
                     </div>
-        <!---photo upload from Dropzone.js--->
-                    <div class="row">
-                        <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
-                    </div> 
+
+        <!--image upload-->
+    <div class="row img-details">
+        <div class="col s12 l6">
+            <div class="row">
+                <a class=" btn modal-trigger" href="#modal1">Upload image</a>
+            </div>
+            <div class="row img-wrapper">
+                <a class="modal-trigger" href="#modal1">
+                    <img src="{{url_for('static', filename='img/default.jpg')}}" alt="default_post_image">
+                </a>
+            </div>
+
+            <!-- Modal  from Materialize-->
+            <div id="modal1" class="modal">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Choose file</span>
+                        <input type="file" name="image_name" onchange="previewFile()" accept="image/gif, image/jpeg, image/png">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload image">
+                    </div>
+                    <div class="right-align">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-blue">Done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
         <!--buttons -->
                         <div class="center-align">
                             <button type="submit" class="btn blue-text text-darken-2 #fdd835 yellow darken-1""center-align btn #fdd835 yellow darken-1">Submit</button>
