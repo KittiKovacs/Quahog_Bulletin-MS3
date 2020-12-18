@@ -17,15 +17,10 @@ nav ul a:hover{
     background-color:#0b8eda;
 }
 
-.dropdown-content li{
-    color:#F8E71C;
-    background-color: #1a237e;
-}
 .dropdown-content li a {
     color:#F8E71C;
     background-color: #1a237e;
     margin:0;
-    transition: background-color .3s;
 }
 
 .sidenav li>a{
@@ -54,6 +49,9 @@ body {
 #front-image{
     padding-top: 80px;
     width:400px
+}
+button{
+    font-family:'Delius', cursive;
 }
 
 main {

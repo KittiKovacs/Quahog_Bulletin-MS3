@@ -119,6 +119,11 @@ def logout():
 @app.route("/create_post", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
+        if 'image_name' in request.files:
+            image_name = request.files['image_name']
+            if image_name != "":
+                mongo.save_file(image_name.filename, image_name)
+
         saved= "on" if request.form.get("saved") else "off"
         post = {
             "category_name": request.form.get("category_name"),
@@ -132,7 +137,6 @@ def create_post():
         flash("Post created")
         return redirect(url_for(
                         "profile", username=session["user"]))
-
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("create_post.html", categories=categories)
 
