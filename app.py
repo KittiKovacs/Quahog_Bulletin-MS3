@@ -62,7 +62,8 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+    categories = list(mongo.db.categories.find())
+    return render_template("register.html", categories=categories)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -91,7 +92,8 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    categories = list(mongo.db.categories.find())
+    return render_template("login.html", categories=categories)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -131,7 +133,7 @@ def create_post():
         return redirect(url_for(
                         "profile", username=session["user"]))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("create_post.html", categories=categories)
 
 

@@ -39,7 +39,7 @@ nav ul a:hover{
 
 /*--body--*/
 h3, h4, h5{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Delius', cursive;
     margin: 80px 0;
     text-align: center;
 }
@@ -47,7 +47,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family:'Montserrat', sans-serif;
+    font-family:'Delius', cursive;
     font-size: 1.5em;
 }
 
@@ -72,6 +72,7 @@ main {
     color: #1a237e;
     font-weight:500;
     font-size:15px;
+    font-family: 'Delius', cursive;
 }
 .card-text{
     font-size:15px;
