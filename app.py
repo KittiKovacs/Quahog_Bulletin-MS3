@@ -37,6 +37,13 @@ def posts(category):
     posts = mongo.db.posts.find()
     return render_template("categories.html", posts=posts, categories=categories)
 
+@app.route('/view_post')
+def view_post():
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = list(mongo.db.categories.find())
+    return render_template('board.html', categories=categories)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -98,7 +105,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one()
+    username = mongo.db.users.find_one_or_404()
 
     if session["user"]:
         categories = list(mongo.db.categories.find())
@@ -121,8 +128,7 @@ def create_post():
     if request.method == "POST":
         if 'image_name' in request.files:
             image_name = request.files['image_name']
-            if image_name != "":
-                mongo.save_file(image_name.filename, image_name)
+            mongo.save_file(image_name.filename, image_name)
 
         saved= "on" if request.form.get("saved") else "off"
         post = {
@@ -131,7 +137,7 @@ def create_post():
             "description": request.form.get("description"),
             "saved": saved,
             "created_by": session["user"],
-            "image_name": image_name.filename,
+            "post_image": image_name.filename,
         }
         mongo.db.posts.insert_one(post)
         flash("Post created")
@@ -141,16 +147,25 @@ def create_post():
     return render_template("create_post.html", categories=categories)
 
 
+@app.route('/post_images/<filename>')
+def post_images(filename):
+    return mongo.send_file(filename)
+
+
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
+        if 'image_name' in request.files:
+            image_name = request.files['image_name']
+            mongo.save_file(image_name.filename, image_name)
         saved= "on" if request.form.get("saved") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "description": request.form.get("description"),
             "saved": saved,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "post_image": image_name.filename,
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post updated!")
