@@ -25,26 +25,6 @@ def index():
     return render_template("index.html", categories=categories)
 
 
-@app.route('/get_categories')
-def get_categories():
-    categories = list(mongo.db.categories.find())
-    return render_template('board.html', categories=categories)
-
-
-@app.route("/posts/<category>")
-def posts(category):
-    categories = list(mongo.db.categories.find())
-    posts = mongo.db.posts.find()
-    return render_template("categories.html", posts=posts, categories=categories)
-
-@app.route('/view_post')
-def view_post():
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    categories = list(mongo.db.categories.find())
-    return render_template('board.html', categories=categories)
-
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == "POST":
@@ -123,12 +103,25 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route('/get_categories')
+def get_categories():
+    categories = list(mongo.db.categories.find())
+    return render_template('board.html', categories=categories)
+
+
+@app.route("/posts/<category>")
+def posts(category):
+    categories = list(mongo.db.categories.find())
+    posts = mongo.db.posts.find()
+    return render_template("categories.html", posts=posts, categories=categories)
+
+
 @app.route("/create_post", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
-        if 'image_name' in request.files:
-            image_name = request.files['image_name']
-            mongo.save_file(image_name.filename, image_name)
+        #if 'image_name' in request.files:
+        ##    image_name = request.files['image_name']
+        ###    mongo.save_file(image_name.filename, image_name)
 
         saved= "on" if request.form.get("saved") else "off"
         post = {
@@ -137,19 +130,27 @@ def create_post():
             "description": request.form.get("description"),
             "saved": saved,
             "created_by": session["user"],
-            "post_image": image_name.filename,
+        #    "post_image": image_name.filename,
         }
         mongo.db.posts.insert_one(post)
         flash("Post created")
         return redirect(url_for(
                         "profile", username=session["user"]))
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(mongo.db.categories.find())
     return render_template("create_post.html", categories=categories)
 
 
 @app.route('/post_images/<filename>')
 def post_images(filename):
     return mongo.send_file(filename)
+
+
+@app.route('/view_post')
+def view_post(post_id):
+    if request.method == "POST":
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template('board.html', categories=categories, post=post)
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
@@ -172,8 +173,8 @@ def edit_post(post_id):
         return redirect(url_for("posts"))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("profile.html", post=post, categories=categories)
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("edit_post.html", post=post, categories=categories)
 
 
 @app.route("/delete_post/<post_id>")
