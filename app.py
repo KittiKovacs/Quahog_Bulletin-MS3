@@ -145,12 +145,11 @@ def post_images(filename):
     return mongo.send_file(filename)
 
 
-@app.route('/view_post')
+@app.route('/view_post/<post_id>')
 def view_post(post_id):
-    if request.method == "POST":
-        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-        categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template('board.html', categories=categories, post=post)
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    categories = list(mongo.db.categories.find())
+    return render_template('view_post.html', categories=categories, post=post)
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
