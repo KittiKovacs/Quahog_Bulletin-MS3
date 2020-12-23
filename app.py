@@ -119,9 +119,9 @@ def posts(category):
 @app.route("/create_post", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
-        #if 'image_name' in request.files:
-        ##    image_name = request.files['image_name']
-        ###    mongo.save_file(image_name.filename, image_name)
+        if 'post_image' in request.files:
+            post_image = request.files['post_image']
+            mongo.save_file(post_image.filename, post_image)
 
         saved= "on" if request.form.get("saved") else "off"
         post = {
@@ -130,7 +130,7 @@ def create_post():
             "description": request.form.get("description"),
             "saved": saved,
             "created_by": session["user"],
-        #    "post_image": image_name.filename,
+            "post_image": post_image.filename,
         }
         mongo.db.posts.insert_one(post)
         flash("Post created")
@@ -140,24 +140,17 @@ def create_post():
     return render_template("create_post.html", categories=categories)
 
 
-@app.route('/post_images/<filename>')
-def post_images(filename):
-    return mongo.send_file(filename)
-
-
 @app.route('/view_post/<post_id>')
 def view_post(post_id):
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = list(mongo.db.categories.find())
-    return render_template('view_post.html', categories=categories, post=post)
+    return render_template('view_post.html')
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
-        if 'image_name' in request.files:
-            image_name = request.files['image_name']
-            mongo.save_file(image_name.filename, image_name)
+        if 'post_image' in request.files:
+            post_image = request.files['post_image']
+            mongo.save_file(post_image.filename, post_image)
         saved= "on" if request.form.get("saved") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
@@ -165,7 +158,7 @@ def edit_post(post_id):
             "description": request.form.get("description"),
             "saved": saved,
             "created_by": session["user"],
-            "post_image": image_name.filename,
+            "post_image": post_image.filename,
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post updated!")

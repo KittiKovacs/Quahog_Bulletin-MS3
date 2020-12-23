@@ -8,48 +8,56 @@
         </h4>
     </div>
 </div>
-    <div class="row container">
-        <div class="col s12">
-                <form method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
-        <!--category selection-->
-		            <div class="input-field">
-                        <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
-			            <select id="category_name" name="category_name" class="validate" required>
-	                        <option value="" disabled>Choose a board to post on</option>
-                            {% for category in categories %}
-                            	<option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-	                        {% else %}
-	                             <option value="{{category.category_name}}">{{category.category_name}}</option>
-	                        {% endfor %}
-	                    </select>
+<div class="row container">
+    <div class="col s12">
+        <form method="POST" action="{{ url_for('edit_post', post_id=post._id) }}" enctype="multipart/form-data">
+
+            <!--category selection-->
+            <div class="input-field">
+                <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled>Choose a board to post on</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                    <option value="{{category.category_name}}">{{category.category_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- Post title -->
+            <div class="input-field">
+                <input id="title" name="title" type="text" minlength="5" maxlength="50" value=" {{post.post_name}}"
+                    class="validate" required>
+                <label for="title">Title</label>
+            </div>
+            <!-- description -->
+            <div class="input-field">
+                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" required>
+                                            {{- post.post_description -}}</textarea>
+                <label for="description">Description</label>
+            </div>
+            
+             <!--image upload-->
+            <div class="row img-details">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Upload image</span>
+                        <input type="file" name="post_image" accept="image/gif, image/jpeg, image/png">
                     </div>
-        <!-- Post title -->
-				    <div class="input-field">
-						<input id="title" name="title" type="text" minlength="5"
-                            maxlength="50" value=" {{post.post_name}}" class="validate" required>
-						<label for="title">Title</label>
-					</div>
-        <!-- description -->
-                    <div class="input-field">
-                        <textarea id="description" class="materialize-textarea validate" minlength="5"
-                            maxlength="500" required>
-                            {{- post.post_description -}}</textarea>
-                        <label for="description">Description</label>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload image">
                     </div>
-        <!---photo upload from Dropzone.js
-                    <div class="row">
-                        <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
-                    </div>-->
-        <!--buttons -->
-                    <div class="row">   
-                        <div class="col s6 center-align">
-                            <button type="submit" class="btn buttons #fdd835 yellow darken-1">Edit</button>
-                            <a href="{{ url_for('profile', username=username) }}" class="btn buttons red">Cancel</a>
-                            <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn-small green accent-4">Delete</a> 
-                        </div>
-                    </div>
-            </form>
-        </div>
+                </div>
+            </div>
+        
+            <!--buttons -->
+            <div class="center-align">
+                <button type="submit"
+                    class="btn blue-text text-darken-2 #fdd835 yellow darken-1 center-align btn #fdd835 yellow darken-1" value="Submit"> Submit
+                </button>
+            </div>
+        </form>
     </div>
+</div>
     
 {% endblock %}
