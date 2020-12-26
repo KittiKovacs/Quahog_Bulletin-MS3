@@ -142,7 +142,8 @@ def create_post():
 
 @app.route('/view_post/<post_id>')
 def view_post(post_id):
-    return render_template('view_post.html')
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template('view_post.html', post=post, post_id=post_id)
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
@@ -162,7 +163,7 @@ def edit_post(post_id):
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post updated!")
-        return redirect(url_for("posts"))
+        return redirect(url_for("posts(category)"))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -173,7 +174,7 @@ def edit_post(post_id):
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post deleted")
-    return redirect(url_for("posts"))
+    return redirect(url_for("posts(category)"))
 
 
 if __name__ == "__main__":
