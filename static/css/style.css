@@ -64,6 +64,9 @@ main {
 .btn-large{
     margin:20px 0;
 }
+.btn{
+    margin:40px 0;
+}
 
 /*--cards--*/
 .card .card-title{
@@ -92,16 +95,6 @@ em{
 }
 .fixed-action-btn{
     position:relative;
-}
-/*--modals--*/
-
-.modal {
-  padding: 40px;
-  text-align: left;
-}
-.img-details img{
-    width:500px;
-    height:auto;
 }
 /*--footer--*/
 .page-footer{

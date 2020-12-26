@@ -18,7 +18,7 @@
                 <p class="truncate card-text">{{ post.description }}</p>
             </div>
             <div>
-                <a class="card-action" href="#">View post</a>
+                <a class="card-action" href="{{ url_for('view_post', post_id=post._id) }}">View post</a>
             </div>
             <div class="center-align">
                 <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn-small light-blue lighten-1">Edit</a>
@@ -40,13 +40,6 @@
             </div>
         </div>
 
-<!--        <div class="col s12 m6 l4 ">
-            <a class="waves-effect waves-light modal-trigger tooltipped" data-tooltip="Create new post" href="{{ url_for('create_post') }}">
-            <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png"/>
-            </a>
-            </div>-->
-    </div>
-
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <h4 class="center-align dark-blue-text text-darken-4">
@@ -65,7 +58,7 @@
                 <p class="truncate card-text">{{ post.description }}</p>
             </div>
             <div>
-                <a class="card-action" href="#">View post</a>
+                <a class="card-action" href="{{ url_for('view_post', post_id=post._id) }}">View post</a>
             </div>
             <div class="center-align">
                 <i onclick="myFunction(this)" class="fas fa-save"></i>
