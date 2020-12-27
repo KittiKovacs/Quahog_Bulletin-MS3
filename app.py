@@ -109,6 +109,13 @@ def get_categories():
     return render_template('board.html', categories=categories)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query= request.form.get("query")
+    posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
+    return render_template("categories.html", posts=posts)
+
+
 @app.route("/posts/<category>")
 def posts(category):
     categories = list(mongo.db.categories.find())
