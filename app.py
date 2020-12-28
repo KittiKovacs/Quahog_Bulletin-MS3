@@ -189,6 +189,27 @@ def delete_post(post_id):
     return redirect(url_for("get_categories"))
 
 
+@app.route("/create_category", methods=["GET", "POST"])
+def create_category():
+    if request.method == "POST":
+        if 'category_image' in request.files:
+            category_image = request.files['category_image']
+            mongo.save_file(category_image.filename, category_image)
+
+        category = {
+            "category_name": request.form.get("category_name"),
+            "category_description": request.form.get("category_description"),
+            "category_image": category_image.filename,
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New category successfully added")
+        return redirect(url_for(
+                        "profile", username=session["user"]))
+    categories = list(mongo.db.categories.find())
+    return render_template("create_category.html", categories=categories)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
