@@ -3,86 +3,24 @@
 
 <h4>Bulletin Boards</h4>
 <div class="row">
+    {% for category in categories %}
     <div class="col s12 m6 l4">
         <div class="card medium sticky-action yellow lighten-5">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="static/img/announcements.jpg" width="auto">
             </div>
             <div class="card-content">
-                <span class="card-title activator">Announcements</span>
-                <p><a class="card-action" href="{{ url_for('posts',category=['Announcements']) }}">View posts</a></p>
+                <span class="card-title activator">{{ category.category_name }}</span>
+                <p><a class="card-action" href="{{ url_for('posts', category=['{{categories.category_name}}']) }}">View posts</a></p>
             </div>
             <div class="card-reveal">
-                <span class="card-title">Announcements</span>
-                 <p class="card-text">Current announcements created by the City Council.</p>
+                <span class="card-title">{{ category.category_name }}</span>
+                 <p class="card-text">{{ category.category_description }}</p>
             </div>
         </div>
     </div>
-    <div class="col s12 m6 l4">
-        <div class="card medium sticky-action yellow lighten-5">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/img/suggestions.jpg" width="auto">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator">Suggestions</span>
-                <p><a class="card-action" href="{{ url_for('posts', category=['Suggestions']) }}">View posts</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title">Suggestions</span>
-                 <p class="card-text">See or make suggestions to the Council, flag up issues, tell us how you would make the city better!</p>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l4">
-        <div class="card medium sticky-action yellow lighten-5">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/img/events.jpg" width="auto">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator">Events</span>
-                <p><a class="card-action" href="{{ url_for('posts', category=['Events']) }}">View posts</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title">Events</span>
-                 <p class="card-text">See what's on!</p><br>
-                 <p class="card-text">Are you organizing an event, starting a class or a club? Advertise it here!</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 m6 l4">
-        <div class="card medium sticky-action yellow lighten-5">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/img/help.jpg" width="auto">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator">Help</span>
-                <p><a class="card-action" href="{{ url_for('posts', category=['Help']) }}">View posts</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title">Help</span>
-                 <p class="card-text">Do you need help with something?</p><br>
-                 <p class="card-text">Do you have a skill to offer?</p><br>
-                 <p class="card-text">Click on thee link below!</p>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l4">
-        <div class="card medium sticky-action yellow lighten-5">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/img/market.jpg" width="auto">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator">Market</span>
-                <p><a class="card-action" href="{{ url_for('posts', category=['Market']) }}">View posts</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title">Market</span>
-                 <p class="card-text">Things for sale</p>
-            </div>
-        </div>
-    </div>
+    {% endfor %}   
+
     <!--Link to create new category-->
     {% if session.user|lower == "admin"|lower %}
     <div class="col s12 m6 l4 card medium yellow lighten-5">
