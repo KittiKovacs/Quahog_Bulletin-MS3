@@ -209,7 +209,6 @@ def create_category():
     return render_template("create_category.html", categories=categories)
 
 
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
