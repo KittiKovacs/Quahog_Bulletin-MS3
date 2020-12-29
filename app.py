@@ -225,12 +225,12 @@ def edit_category(category_id):
             category_image = request.files['category_image']
             mongo.save_file(category_image.filename, category_image)
 
-        category = {
+        edit = {
             "category_name": request.form.get("category_name"),
             "category_description": request.form.get("category_description"),
             "category_image": category_image.filename,
         }
-        mongo.db.categories.update(category)
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, edit)
         flash("Category updated!")
         return redirect(url_for("get_categories"))
 
