@@ -25,6 +25,9 @@ def index():
     return render_template("index.html", categories=categories)
 
 
+# User authentication
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == "POST":
@@ -116,6 +119,9 @@ def search():
     return render_template("categories.html", posts=posts)
 
 
+# CRUD functions-post management
+
+
 @app.route("/posts/<category>")
 def posts(category):
     categories = list(mongo.db.categories.find())
@@ -175,7 +181,7 @@ def edit_post(post_id):
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post updated!")
-        return redirect(url_for("profile"))
+        return redirect(url_for("profile", username=session["user"]))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -186,7 +192,10 @@ def edit_post(post_id):
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post deleted")
-    return redirect(url_for("get_categories"))
+    return redirect(url_for("profile", username=session["user"]))
+
+
+# Manage categories-Admin functions
 
 
 @app.route("/create_category", methods=["GET", "POST"])
@@ -203,10 +212,38 @@ def create_category():
         }
         mongo.db.categories.insert_one(category)
         flash("New category successfully added")
-        return redirect(url_for(
-                        "profile", username=session["user"]))
+        return redirect(url_for("get_categories"))
+
     categories = list(mongo.db.categories.find())
     return render_template("create_category.html", categories=categories)
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        if 'category_image' in request.files:
+            category_image = request.files['category_image']
+            mongo.save_file(category_image.filename, category_image)
+
+        category = {
+            "category_name": request.form.get("category_name"),
+            "category_description": request.form.get("category_description"),
+            "category_image": category_image.filename,
+        }
+        mongo.db.categories.update(category)
+        flash("Category updated!")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    categories = list(mongo.db.categories.find())
+    return render_template("edit_category.html", categories=categories, category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category deleted")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

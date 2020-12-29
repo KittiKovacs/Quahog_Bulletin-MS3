@@ -50,9 +50,6 @@ body {
     padding-top: 80px;
     width:400px
 }
-button{
-    font-family:'Delius', cursive;
-}
 
 main {
     flex: 1 0 auto;
@@ -61,6 +58,11 @@ main {
 .flashes h4 {
     line-height: 2;
 }
+
+button{
+    font-family:'Delius', cursive;
+}
+
 .btn-large{
     margin:20px 0;
 }
@@ -100,6 +102,8 @@ em{
 /* Images displayed as Modal  from: https://www.w3schools.com/howto/howto_css_modal_images.asp*/
 
 #myImg {
+  width:100%;
+  max-width:300px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -109,17 +113,17 @@ em{
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; 
+  position: fixed;  
+  z-index: 1;
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;    
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9); 
 }
 
 /* Modal Content (image) */
@@ -127,12 +131,7 @@ em{
   margin: auto;
   display: block;
   width: 80%;
-  max-width: 700px;
-}
-
-
-/* Add Animation */
-.modal-content, #caption {  
+  max-width: 700px; 
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;

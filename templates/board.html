@@ -4,18 +4,36 @@
 <h4>Bulletin Boards</h4>
 <div class="row">
     {% for category in categories %}
+
+    {% if session.user|lower == "admin"|lower %}
+    
     <div class="col s12 m6 l4">
         <div class="card medium sticky-action yellow lighten-5">
+            <div class="fixed-action-btn horizontal">
+                <a class="btn-floating btn-small red">
+                    <i class="fas fa-plus"></i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating btn-small blue"
+                            href="{{ url_for('edit_category', category_id=category._id) }}"><i class="fas fa-pencil-alt"
+                                alt="Edit"></i></a></li>
+                    <li><a class="btn-floating btn-small red"
+                            href="{{ url_for('delete_category', category_id=category._id) }}"><i
+                                class="fas fa-trash-alt"></i></a></li>
+                </ul>
+            </div>
+            {% endif %}
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/img/announcements.jpg" width="auto">
+                <img class="activator" src="{{url_for('img_uploads', filename=categories['category_image'])}}" width="auto">
             </div>
             <div class="card-content">
                 <span class="card-title activator">{{ category.category_name }}</span>
-                <p><a class="card-action" href="{{ url_for('posts', category=['{{categories.category_name}}']) }}">View posts</a></p>
+                <p><a class="card-action" href="{{ url_for('posts', category=['{{categories.category_name}}']) }}">View
+                        posts</a></p>
             </div>
             <div class="card-reveal">
                 <span class="card-title">{{ category.category_name }}</span>
-                 <p class="card-text">{{ category.category_description }}</p>
+                <p class="card-text">{{ category.category_description }}</p>
             </div>
         </div>
     </div>

@@ -34,7 +34,7 @@
             </div>
             <!-- description -->
             <div class="input-field">
-                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" required>
+                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}"required>
                                             {{- post.description -}}</textarea>
                 <label for="description">Description</label>
             </div>
@@ -43,7 +43,7 @@
             <div class="row img-details">
                 <div class="file-field input-field">
                     <div class="btn">
-                        <span>Upload image</span>
+                        <span>Upload another image</span>
                         <input type="file" name="post_image" accept="image/gif, image/jpeg, image/png">
                     </div>
                     <div class="file-path-wrapper">
