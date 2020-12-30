@@ -18,9 +18,13 @@
                 <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose a board for your post</option>
-                    {% for category in categories %}
-                    <option value="{{category.category_name}}">{{category.category_name}}</option>
-                    {% endfor %}
+                        {% if session.user|lower == "admin"|lower %}
+                            <option>Announcements</option>
+                        {% else %}
+                            {% for category in categories %}
+                            <option value="{{category.category_name}}">{{category.category_name}}</option>
+                            {% endfor %}
+                        {% endif %}         
                 </select>
                 <label for="category_name">Categories</label>
             </div>
