@@ -3,9 +3,11 @@
 
 {% for title in categories %}
 
+
     <h4>{{ title.category_name }}</h4>
 
-{% endfor %}
+    {% endfor %}
+
 
 <!--Search field-->
 <div class="row">
@@ -26,9 +28,14 @@
 </div>
 
 <div class="row">
+    
+{% if posts.category_name == categories.category_name %}
+
     {% for post in posts %}
 
     <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+
+    {% if session.user %}
         <div class="fixed-action-btn horizontal">
             <a class="btn-floating btn-small red">
                 <i class="fas fa-plus"></i>
@@ -43,6 +50,7 @@
                 <li><a class="btn-floating btn-small yellow" href="#"><i class="fas fa-save"></i></a></li>
             </ul>
         </div>
+    {% endif %}
         <div class="card-content">
             <p><em>Created by: {{ post.created_by }}</em></p>
             <span class="card-title ">{{ post.title }}</span>
@@ -54,6 +62,7 @@
     </div>
 
     {% endfor %}
+{% endif %}
 </div>
 
 {% endblock %}
