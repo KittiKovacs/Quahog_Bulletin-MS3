@@ -116,7 +116,15 @@ def get_categories():
 def search():
     query= request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
-    return render_template("categories.html", posts=posts)
+    categories = list(mongo.db.categories.find())
+    return render_template("categories.html", posts=posts, categories=categories)
+
+
+@app.route("/save", methods=["GET", "POST"])
+def save():
+    categories = list(mongo.db.categories.find())
+    posts = list(mongo.db.posts.find())
+    return render_template("categories.html", posts=posts, categories=categories)
 
 
 # CRUD functions-post management
@@ -126,7 +134,8 @@ def search():
 def posts(category):
     categories = list(mongo.db.categories.find())
     posts = mongo.db.posts.find()
-    return render_template("categories.html", posts=posts, categories=categories)
+    return render_template(
+        "categories.html", posts=posts, categories=categories)
 
 
 @app.route("/create_post", methods=["GET", "POST"])
@@ -141,6 +150,7 @@ def create_post():
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "description": request.form.get("description"),
+            "contact_details": request.form.get("contact_details"),
             "saved": saved,
             "created_by": session["user"],
             "post_image": post_image.filename,
@@ -175,6 +185,7 @@ def edit_post(post_id):
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "description": request.form.get("description"),
+            "contact_details": request.form.get("contact_details"),
             "saved": saved,
             "created_by": session["user"],
             "post_image": post_image.filename,

@@ -34,11 +34,16 @@
             </div>
             <!-- description -->
             <div class="input-field">
-                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}"required>
-                                            {{- post.description -}}</textarea>
+                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}" required>
+                                            </textarea>
                 <label for="description">Description</label>
             </div>
-
+            <!--contact details-->
+            <div class="input-field">
+                <textarea id="contact" name="contact" type="text" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.contact_details -}}"
+                    required></textarea>
+                <label for="contact">Contact details</label>
+            </div>
             <!--image upload-->
             <div class="row img-details">
                 <div class="file-field input-field">
