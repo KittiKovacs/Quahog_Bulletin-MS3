@@ -123,14 +123,16 @@ def search():
     query= request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
     categories = list(mongo.db.categories.find())
-    return render_template("categories.html", posts=posts, categories=categories)
+    return render_template(
+        "categories.html", posts=posts, categories=categories)
 
 
-@app.route("/save", methods=["GET", "POST"])
-def save():
-    categories = list(mongo.db.categories.find())
-    posts = list(mongo.db.posts.find())
-    return render_template("categories.html", posts=posts, categories=categories)
+@app.route("/save/<post_id>", methods=["GET", "POST"])
+def save(post_id):
+    if request.method == "POST":
+        saved= request.form.get("saved")
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, saved)
+    return redirect(url_for("profile", username=session["user"]))
 
 
 # CRUD functions-post management
