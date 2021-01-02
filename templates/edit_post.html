@@ -28,21 +28,20 @@
             </div>
             <!-- Post title -->
             <div class="input-field">
-                <input id="title" name="title" type="text" minlength="5" maxlength="50" value=" {{post.title}}"
+                <input id="title" name="title" type="text" minlength="5" maxlength="50" value=" {{ post.title }}"
                     class="validate" required>
                 <label for="title">Title</label>
             </div>
             <!-- description -->
             <div class="input-field">
-                <textarea id="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}" required>
-                                            </textarea>
+                <input id="description" name="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}" required>
                 <label for="description">Description</label>
             </div>
             <!--contact details-->
             <div class="input-field">
-                <textarea id="contact" name="contact" type="text" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.contact_details -}}"
-                    required></textarea>
-                <label for="contact">Contact details</label>
+                <input id="contact_details" name="contact_details" type="text" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.contact_details -}}"
+                    required>
+                <label for="contact_details">Contact details</label>
             </div>
             <!--image upload-->
             <div class="row img-details">
