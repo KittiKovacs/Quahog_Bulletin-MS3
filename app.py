@@ -262,7 +262,8 @@ def edit_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     categories = list(mongo.db.categories.find())
-    return render_template("edit_category.html", categories=categories, category=category)
+    return render_template(
+        "edit_category.html", categories=categories, category=category)
 
 
 @app.route("/delete_category/<category_id>")
