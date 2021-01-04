@@ -48,7 +48,7 @@ body {
 
 #front-image{
     padding-top: 80px;
-    width:400px
+    width:300px
 }
 
 main {
@@ -94,9 +94,8 @@ em{
     object-fit:scale-down;
 }
 
-.card.small {
+.card.small{
     height: 250px;
-    padding:0 .75rem;
 }
 .fixed-action-btn{
     position:relative;

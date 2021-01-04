@@ -78,12 +78,11 @@ def login():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
                         "profile", username=session["user"]))
             else:
                 # invalid password match
@@ -106,7 +105,8 @@ def profile(username):
     if session["user"]:
         categories = list(mongo.db.categories.find())
         posts = mongo.db.posts.find()
-        return render_template("profile.html", username=username, posts=posts, categories=categories)
+        return render_template(
+            "profile.html", username=username, posts=posts, categories=categories)
 
     return redirect(url_for("login"))
 
@@ -127,7 +127,7 @@ def get_categories():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query= request.form.get("query")
+    query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
     categories = list(mongo.db.categories.find())
     return render_template(
@@ -137,7 +137,7 @@ def search():
 @app.route("/save/<post_id>", methods=["GET", "POST"])
 def save(post_id):
     if request.method == "POST":
-        saved= request.form.get("saved")
+        saved = request.form.get("saved")
         mongo.db.posts.update({"_id": ObjectId(post_id)}, saved)
     return redirect(url_for("profile", username=session["user"]))
 
@@ -160,7 +160,7 @@ def create_post():
             post_image = request.files['post_image']
             mongo.save_file(post_image.filename, post_image)
 
-        saved= "on" if request.form.get("saved") else "off"
+        saved = "on" if request.form.get("saved") else "off"
         post = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
@@ -195,7 +195,7 @@ def edit_post(post_id):
         if 'post_image' in request.files:
             post_image = request.files['post_image']
             mongo.save_file(post_image.filename, post_image)
-        saved= "on" if request.form.get("saved") else "off"
+        saved = "on" if request.form.get("saved") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
@@ -276,4 +276,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
