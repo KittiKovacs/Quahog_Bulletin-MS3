@@ -2,9 +2,7 @@
 
 ## The Online Bulletin Board of the fictional city of Quahog                                          
 
-The purpose of the project is to create an online platform for the citizens and the council to post ideas, announcements or advertisements to- much like a real-life bulletin board. 
-
-My aim with the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
+The aim with the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
 
 Please see the link to the live page below:
 
@@ -13,10 +11,15 @@ https://quahog-bulletin.herokuapp.com/
 
 ## UX
 
-The registered user can easily get involved in and contribute to the life of their community. They can look for updates from the local council; they can post ads and invitations to events, clubs, goups and so on. They can offer and ask for help thereby strengthening the ties between the community members.
+### Project goals 
+
+The purpose of the project is to create an online platform for the citizens as well as the council (admin) of the fictional city of Quahog to create posts in certain categories- much like they would on a real-life bulletin board. 
+
+This way the registered user can easily get involved in and contribute to the life of their community. They can look for updates from the local council; they can post ads and invitations to events, clubs, goups and so on. They can offer and ask for help and put their possessions up for sale.
+
 Unregistered users can still view the post but the site doesn't allow them to create their own posts or to save them for later.
 
-## User stories
+### User stories
 
 As a user I want to create new posts in different categories
 
@@ -40,7 +43,11 @@ As a user who is not a resident would like to see what's going on in the city an
 
 As a user who would like to get in touch with the Council directly I am interested in the contact details of the City hall.
 
-## Wireframes
+### Design
+
+### Wireframes
+
+There are some differences between the wireframes I created initially and the completed project, because sometimes I found a better way to execute the initial ideas during development.
 
 **Homepage**
 
@@ -139,9 +146,9 @@ As a user who would like to get in touch with the Council directly I am interest
 
 - This page has been created to display all posts in each category.
 
-- The content of the posts is displayed on cards, each of which has a link on the bottom to the page containing posts within each category.
+- The truncated content of the post is displayed on the cards, each of which has a link on the bottom that takes the user to a separate page where they can view the full details of each post.
 
-- Admin is able to add a new category (AKA Board)
+-There is a floating action button in the top left corner of each card. If it's not the user's own post, the user can save it into their own collection of posts on their profile page. If the user created the post in question, the user is able to edit or delete the post by simply clicking on the relevant button which appears on mouse hover.
 
 
 #### Creating Posts
@@ -166,15 +173,25 @@ As a user who would like to get in touch with the Council directly I am interest
 
 #### Admin
 
+- Admin is 
 
 ### Features left to implement
 
 - Allow users to upload multiple images to each posts.
 
-- Add a comment section whereby the users can communicate with each other more effectively.
+- Add a comment section whereby the users can have a conversation with each other.
 
+## Information architecture
+
+### Database Choice
+
+### Data modelling
+
+![Schema](static/schema/Schema_MS3.JPG)
 
 ## Technologies Used
+
+### Languages
 
 - HTML5 
 
@@ -182,18 +199,17 @@ As a user who would like to get in touch with the Council directly I am interest
 
 - JavaScript
 
-- Python3, Flask framework
+- Python3
 
-- Jinja templating 
+- Jinja templating language
+
+### Libraries and frameworks
+
+- Flask framework
 
 - Materialize style library
 
-- MongoDB as my database
-
-Schema
-
-![Schema](static/schema/Schema_MS3.JPG)
-
+### Tools
 
 - Balsamiq for creating wireframes
 
@@ -201,21 +217,19 @@ Schema
 
 - Google Fonts
 
-Development environment:
-I have used Gitpod to develop the app. I used Code Institute's Gitpod full template as my basis.
+- Icons 8 for certain icons
 
-Version control system:
-I have used Gitpod changes in the website by making regular commits with descriptive titles and pushed them to GitHub.
+### Databases
+
+- MongoDB Atlas
+
 
 
 ## Testing
 
 ### Testing in different browsers
-Chrome I used Chrome throughout the development, so everything was tested in Chrome first. I frequently checked things on my Android phone with Chrome.
 
-Safari I asked family members to check the page on Apple devices, it worked well on iPhone 4S, SE and 6.
-
-Firefox and Microsoft Edge After autoprefixing my CSS, I checked functionality and appearance in Firefox and Edge, no issues found.
+I used Google Chrome throughout the development. The app has been tested and works well on Firefox and Microsoft Edge.
 
 
 ### Testing against the user stories
@@ -251,7 +265,7 @@ I used https://jigsaw.w3.org/css-validator/ to validate the CSS code.
 
 I used https://jshint.com/  to check the JavaScript code.
 
-## Problems encountered
+### Problems encountered
 
 Image upload
 Saving posts
@@ -259,7 +273,15 @@ Categories page
 
 ## Deployment
 
-The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . I closely followed the tutorial videos on Heroku which are part of the course.
+### Local deployment
+
+I have used Gitpod to develop the app, more specifically I used Code Institute's Gitpod full template as my basis.
+
+I have used Gitpod to track changes in the website by making regular commits with descriptive titles and pushed them to my GitHub repository.
+
+### Heroku deployment
+
+The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . In order to do this I closely followed the tutorial videos on Heroku which are part of the course.
 
 1. First I created a new app in Heroku called quahog-bulletin. 
 
@@ -282,16 +304,25 @@ The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . I cl
 7. Now the automatic deployment is set up I removed Heroku remote on Github: git remote rm heroku.
 
 
-#### Differences between the deployed production version and the development version:
-
-
-
 ## Credits
 
-### Content
+### Code
+
+### Content and Media
+
+The user's names and images are from the following website: https://familyguy.fandom.com/wiki/Family_Guy:_The_Top_20_Characters
 
 
-### Media
+
+## Acknowledgements
+
+Many thanks to my Mentor Guido Cecilio Garcia Bernal for offering guidance and constructive crticism.
+Similarly, the Tutors at Code Institue were a big help when I got stuck in the process.
+
+## Disclaimer 
+
+The page has been created for educational purpose, not for commercial use. 
+
 
 
 ### Acknowledgements
