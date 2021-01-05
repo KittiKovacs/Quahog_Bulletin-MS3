@@ -3,12 +3,6 @@
 
 <div class="row">
     <div class="col s12 center-align">
-        <a id="back-button" class=" blue-text text-darken-2 #fdd835 yellow darken-1 center-align btn"
-            href="{{ url_for('get_categories') }}">Back</a>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 center-align">
         <p><strong>Created by: {{ post.created_by }}</strong></p>
         <p>In category: {{ post.category_name }}</p>
         <p>{{ post.title }}</p>
@@ -27,6 +21,25 @@
             {% endif %}
         </div>
     </div>
+    <div class="row">
+        <div class="col s12 center-align">
+     {% if session.user|lower == post.created_by|lower %}
+
+                    <a id="edit-button" class=" blue-text text-darken-2 #fdd835 blue lighten-1 center-align btn" href="{{ url_for('edit_post', post_id=post._id) }}"><i
+                            class="fas fa-pencil-alt" alt="Edit"></i></a>
+
+                    <a id="delete-button" class=" blue-text text-darken-2 #fdd835 red lighten-1 center-align btn" href="{{ url_for('delete_post', post_id=post._id) }}"><i
+                            class="fas fa-trash-alt"></i></a>
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <a id="back-button" class=" blue-text text-darken-2 #fdd835 yellow darken-1 center-align btn"
+            href="{{ url_for('get_categories') }}">Back</a>
+        </div>
+</div>
 
     
 {% endblock %}

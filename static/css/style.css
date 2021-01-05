@@ -73,6 +73,12 @@ button{
 #back-button{
     margin: 50px;
 }
+#edit-button{
+    margin: 20px 0;
+}
+#delete-button{
+    margin: 20px 0;
+}
 
 /*--cards--*/
 .card .card-title{

@@ -134,14 +134,6 @@ def search():
         "categories.html", posts=posts, categories=categories)
 
 
-@app.route("/save/<post_id>", methods=["GET", "POST"])
-def save(post_id):
-    if request.method == "POST":
-        saved = request.form.get("saved")
-        mongo.db.posts.update({"_id": ObjectId(post_id)}, saved)
-    return redirect(url_for("profile", username=session["user"]))
-
-
 # CRUD functions-post management
 
 
@@ -159,14 +151,11 @@ def create_post():
         if 'post_image' in request.files:
             post_image = request.files['post_image']
             mongo.save_file(post_image.filename, post_image)
-
-        saved = "on" if request.form.get("saved") else "off"
         post = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "description": request.form.get("description"),
             "contact_details": request.form.get("contact_details"),
-            "saved": saved,
             "created_by": session["user"],
             "post_image": post_image.filename,
         }
@@ -195,13 +184,11 @@ def edit_post(post_id):
         if 'post_image' in request.files:
             post_image = request.files['post_image']
             mongo.save_file(post_image.filename, post_image)
-        saved = "on" if request.form.get("saved") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "title": request.form.get("title"),
             "description": request.form.get("description"),
             "contact_details": request.form.get("contact_details"),
-            "saved": saved,
             "created_by": session["user"],
             "post_image": post_image.filename,
         }
@@ -219,6 +206,15 @@ def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post deleted")
     return redirect(url_for("profile", username=session["user"]))
+
+
+@app.route("/save_post/<post_id>", methods=["GET", "POST"])
+def save_post(post_id):
+    if request.method == "POST":
+        flash("Post saved")
+        return redirect(url_for("profile", username=session["user"]))
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template("profile.html", post=post, post_id=post_id)
 
 
 # Manage categories-Admin functions
