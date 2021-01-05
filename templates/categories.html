@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col s12 center-align">
         <a id="back-button" class=" blue-text text-darken-2 #fdd835 yellow darken-1 center-align btn"
-            href="{{ url_for('get_categories') }}">Back</a>
+            href="{{ url_for('get_categories') }}">See all boards</a>
     </div>
 </div>
 <!--Search field-->
@@ -52,7 +52,7 @@
                 </li>
             {% else %}
                 <li>
-                    <a class="btn-floating btn-small yellow" href="{{ url_for('save_post', post_id=post._id) }}"><i class="fas fa-save"></i></a>
+                    <a class="save btn-floating btn-small yellow" href="{{ url_for('save_post', post_id=post._id) }}"><i class="fas fa-save"></i></a>
                 </li>
             {% endif %}
             </ul>

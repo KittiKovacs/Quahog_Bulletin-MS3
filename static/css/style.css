@@ -79,6 +79,24 @@ button{
 #delete-button{
     margin: 20px 0;
 }
+.post-content{
+    font-size: 15px;
+    margin-top:80px;
+}
+#title{
+    margin-top:40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+#post-description{
+    margin-top:40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+#contact-details{
+    margin-top:40px;
+    font-size: 20px;
+}
 
 /*--cards--*/
 .card .card-title{
