@@ -211,7 +211,7 @@ There are some differences between the wireframes I created initially and the co
 
 ### Data modelling
 
-![Schema](static/img/Schema_MS3.JPG)
+![Schema](static/img/Schema_MS3.jpg)
 
 ## Technologies Used
 
