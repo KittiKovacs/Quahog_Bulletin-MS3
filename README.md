@@ -160,6 +160,8 @@ There are some differences between the wireframes I created initially and the co
 
 - There is a floating action button in the top left corner of each card which reveals some icons. If someone else created the post, the user can save it into their own collection of posts on their profile page. If the user created the post, the user is able to edit or delete the post by simply clicking on the relevant button which appears on mouse hover.
 
+- There is a search field where the user can perform a keyword search.
+
 
 #### Creating Posts
 
@@ -209,7 +211,7 @@ There are some differences between the wireframes I created initially and the co
 
 ### Data modelling
 
-![Schema](static/schema/Schema_MS3.JPG)
+![Schema](static/img/Schema_MS3.JPG)
 
 ## Technologies Used
 
