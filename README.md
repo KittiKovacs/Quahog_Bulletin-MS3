@@ -119,7 +119,7 @@ There are some differences between the wireframes I created initially and the co
 
 - Flash message appears if the username is not valid or if the password is incorrect.
 
--"Register here" link below the form to get redirected to the registration page.
+- "Register here" link below the form to get redirected to the registration page.
 
 
 #### Register
@@ -133,35 +133,6 @@ There are some differences between the wireframes I created initially and the co
 - In order to store the passwords securely in MongoDB, the passwords have been hashed.
 
 
-#### Boards
-
-- This page has been created to display all categories and to give an idea to the user what each category entails. 
-
-- The content is displayed on cards, each of which has a link on the bottom to the page containing posts within each category.
-
-- Admin is able to add a new category (AKA Board)
-
-
-#### Categories
-
-- This page has been created to display all posts in each category.
-
-- The truncated content of the post is displayed on the cards, each of which has a link on the bottom that takes the user to a separate page where they can view the full details of each post.
-
--There is a floating action button in the top left corner of each card. If it's not the user's own post, the user can save it into their own collection of posts on their profile page. If the user created the post in question, the user is able to edit or delete the post by simply clicking on the relevant button which appears on mouse hover.
-
-
-#### Creating Posts
-
-- The user first selects a category for the post
-
-- The user can give a description, add contact details (name, phone number, address website etc.) if they wish.
-
-- The user can upload a photo to their post by which will be saved in the database as well.
-
-- The new post is created when the User clicks the Save button.
-
-
 #### Profile
 
 - After successful login, the user is greeted by a flash message.
@@ -171,9 +142,60 @@ There are some differences between the wireframes I created initially and the co
 - The User has permission to edit or delete their own posts from here and also to remove posts from the saved section.
 
 
+
+#### Boards
+
+- This page has been created to display all categories and to give an idea to the user what each category entails. 
+
+- The content is displayed on cards, each of which has a link on the bottom to the page containing posts within each category.
+
+- Admin is able to add a new category (AKA Board).
+
+
+#### Categories
+
+- This page has been created to display all posts in each category.
+
+- The truncated content of the post is displayed on the cards, each of which has a link on the bottom that takes the user to a separate page where they can view the full details of each post.
+
+- There is a floating action button in the top left corner of each card which reveals some icons. If someone else created the post, the user can save it into their own collection of posts on their profile page. If the user created the post, the user is able to edit or delete the post by simply clicking on the relevant button which appears on mouse hover.
+
+
+#### Creating Posts
+
+- The user first selects a category for the post. They can choose from all categories except Announcements which is reserved for Admin.
+
+- The user can give a description, add contact details (name, phone number, address website etc.) if they wish.
+
+- The user can upload a photo to their post by which will be saved in the database as well.
+
+- The new post is created when the User clicks the Save button. The app displays a flash message to let the user know that the post has been created.
+
+
+#### Updating Posts
+
+- The user can select any post that they created. They are taken to the Edit post page.
+
+- The user can change every input field or upload a different image. 
+
+- The post is updated when the User clicks the Done button. The app displays a flash message to let the user know that the post has been updated.
+
+
+#### Deleting Posts
+
+- The user can delete any post that they created. 
+
+- The delete icon appears when they hover over the Floating Action Button.
+
+- The app displays a flash message to let the user know that the post has been deleted.
+
+
 #### Admin
 
-- Admin is 
+- Admin user is able to create posts on the Announcements page. They don't have access to any other options from the dropdown list.
+
+- They are also able to create, edit or delete categories as well as posts. There is an additional menu item available for Admin only named Create Board that serves this purpose.
+
 
 ### Features left to implement
 
