@@ -22,7 +22,9 @@
                             <option>Announcements</option>
                         {% else %}
                             {% for category in categories %}
+                                {% if category.category_name!="Announcements" %}
                             <option value="{{category.category_name}}">{{category.category_name}}</option>
+                                {% endif%}
                             {% endfor %}
                         {% endif %}         
                 </select>
