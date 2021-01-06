@@ -199,6 +199,7 @@ def edit_post(post_id):
         return redirect(url_for("profile", username=session["user"]))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("edit_post.html", post=post, categories=categories)
 

@@ -220,6 +220,10 @@ There are some differences between the wireframes I created initially and the co
 
 - They are also able to create, edit or delete categories as well as posts. There is an additional menu item available for Admin only named Create Board that serves this purpose.
 
+#### Error handling
+
+- I created templates and routes to handle 404 and 500 errors.
+
 
 ### Features left to implement
 
@@ -312,8 +316,22 @@ I used https://jshint.com/  to check the JavaScript code.
 
 ### Problems encountered
 
-Saving posts
-Categories page
+#### Image uploads
+To insert an image into MongoDB I learned from the Pretty Printed Youtube channel https://www.youtube.com/watch?v=DsgAuceHha4
+It did not work for me at first so I asked for tutor advice. They suggested that I find an alternative storage for the images as
+MongoDB is not the best solution for this. In the end I decided I am not giving up on this as I've seen it work on the video and on a live example as well. 
+It seemed that the code worked after all and there was a connection issue with MongoDB.
+The code now works and I am able to insert images.
+
+#### Giving different rights to users
+I wanted Admin to have rights to create a post in the Admin category, and all other users to every other category.
+In order to achieve this I had to figure out how to filter the dropdown list. After several different versions I managed to find a solution,
+which meant I researched Jinja templating and syntax extensively. 
+
+
+#### Saving posts
+#### Categories page
+Many issues during development came from the fact that I left room for creating a new category which made the development process longer than I expected.
 
 ## Deployment
 
