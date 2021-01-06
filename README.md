@@ -50,6 +50,19 @@ The registration page, login, categories and posts are displayed on cards with a
 
 Buttons with different functions have different colours for better user experience. 
 
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/front-page.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/login-page.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/profile-page.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/boards-page.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/view-post-page.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/edit-page.JPG">
+
+
 The design is responsive on all viewports with the menu displaying as a sidenav on medium and below.
 
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-home.JPG">
