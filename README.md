@@ -45,6 +45,21 @@ As a user who would like to get in touch with the Council directly I am interest
 
 ### Design
 
+The page has a white background with a blue navigation bar and footer. The colour scheme is consistent with the original colours of the animated series Family Guy where I got the city name and the registered users from. 
+The registration page, login, categories and posts are displayed on cards with a light yellow background.
+
+Buttons with different functions have different colours for better user experience. 
+
+The design is responsive on all viewports with the menu displaying as a sidenav on medium and below.
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-home.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-2.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-3.JPG">
+
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-4.JPG">
+
 ### Wireframes
 
 There are some differences between the wireframes I created initially and the completed project, because sometimes I found a better way to execute the initial ideas during development.
@@ -64,16 +79,13 @@ There are some differences between the wireframes I created initially and the co
 
 **Profile**
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile_mobile.png" width="200"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Admin_profile.png" width="400">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Profile_mobile.png" width="200">
 
 **Boards (Categories)**
 
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Boards_Categories.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Boards_mobile.png" width="200">
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-Market.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-Market_mobile.png" width="200">
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Registered-announcements.png" width="400">
 
-
-**CRUD**
 
 **Create post**
 
@@ -87,9 +99,6 @@ There are some differences between the wireframes I created initially and the co
 
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Edit_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Edit_post_mobile.png" width="200">
 
-**Delete post**
-
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Delete_post.png" width="400"> <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/wireframes/Delete_post_mobile.png" width="200">
 
 **Admin functions**
 
