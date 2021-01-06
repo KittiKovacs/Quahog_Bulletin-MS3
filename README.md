@@ -52,13 +52,13 @@ Buttons with different functions have different colours for better user experien
 
 The design is responsive on all viewports with the menu displaying as a sidenav on medium and below.
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-home.JPG">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-home.JPG">
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-2.JPG">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-2.JPG">
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-3.JPG">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-3.JPG">
 
-<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/responsive-4.JPG">
+<img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-4.JPG">
 
 ### Wireframes
 
@@ -220,7 +220,7 @@ There are some differences between the wireframes I created initially and the co
 
 ### Data modelling
 
-![Schema](static/img/Schema_MS3.jpg)
+![Schema](static/img/design/Schema_MS3.jpg)
 
 ## Technologies Used
 
@@ -255,7 +255,6 @@ There are some differences between the wireframes I created initially and the co
 ### Databases
 
 - MongoDB Atlas
-
 
 
 ## Testing
@@ -300,7 +299,6 @@ I used https://jshint.com/  to check the JavaScript code.
 
 ### Problems encountered
 
-Image upload
 Saving posts
 Categories page
 
@@ -308,19 +306,34 @@ Categories page
 
 ### Local deployment
 
-I have used Gitpod to develop the app, more specifically I used Code Institute's Gitpod full template as my basis.
+I created a GitHub reposiroty using the Gitpod full template as my basis.
 
-I have used Gitpod to track changes in the website by making regular commits with descriptive titles and pushed them to my GitHub repository.
+I installed Flask, Flask-pymongo and dnspython.
+
+I created an env.py file that contains my environmental variables. I added env.py to gitignore file along with __pycache__/
+
+I created the app.py file and added the import env as well and added the dependencies.
+
+I created an instance of Flask and stored it in a variable  app= Flask (__name__)
+
+I used Gitpod to track changes in the website by making regular commits with descriptive titles and pushed them to my GitHub repository.
+
+I added the below code to the end of the app.py file and changed debug=False when I finished development.
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
 
 ### Heroku deployment
 
 The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . In order to do this I closely followed the tutorial videos on Heroku which are part of the course.
 
-1. First I created a new app in Heroku called quahog-bulletin. 
+First I created a new app in Heroku called quahog-bulletin. 
 
-2. I created my repository on GitHub. I installed Heroku in my project by using the Heroku CLI in the terminal and logged into Heroku. 
+I installed Heroku in my project by using the Heroku CLI in the terminal and logged into Heroku. 
 
-3. I created requirements.txt and Procfile that Heroku requires to run the app:
+I created requirements.txt and Procfile that Heroku requires to run the app:
 
   pip3 freeze -- local > requirements.txt
 
@@ -328,13 +341,11 @@ The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . In o
   
   I pushed both files to GitHub then enabled automatic deploys to the master branch.
  
-4. I connected Git remote to Heroku and pushed everything to Heroku master: git push -u heroku master
+I connected Git remote to Heroku and pushed everything to Heroku master: git push -u heroku master
 
-5. Within my repository I've created an env.py file that contains my environmental variables. I added env.py to gitignore file along with __pycache__/
+In the  Heroku app's settings (Config Vars) I've added my environmental variables for the IP, PORT, MONGODB_URI and SECRET_KEY
 
-6. In the  Heroku app's settings (Config Vars) I've added my environmental variables for the IP, PORT, MONGODB_URI and SECRET_KEY
-
-7. Now the automatic deployment is set up I removed Heroku remote on Github: git remote rm heroku.
+Now the automatic deployment is set up I removed Heroku remote on Github: git remote rm heroku.
 
 
 ## Credits
