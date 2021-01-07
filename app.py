@@ -25,7 +25,7 @@ def index():
     return render_template("index.html", categories=categories)
 
 
-# Error handling from https://docs.djangoproject.com/en/3.1/intro/tutorial03/#raising-a-404-error
+# Error handling from https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 
 
 @app.errorhandler(404)
@@ -57,7 +57,8 @@ def register():
             "house_no": request.form.get("house_number"),
             "street_name":  request.form.get("street").lower(),
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "favorite_posts": []
         }
         mongo.db.users.insert_one(register)
 
@@ -99,15 +100,14 @@ def login():
     return render_template("login.html", categories=categories)
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    username = mongo.db.users.find_one_or_404()
-
+@app.route("/profile", methods=["GET"])
+def profile():
     if session["user"]:
+        user = mongo.db.users.find_one_or_404({"username": session["user"]})
         categories = list(mongo.db.categories.find())
         posts = mongo.db.posts.find()
         return render_template(
-            "profile.html", username=username, posts=posts,
+            "profile.html", username=session["user"], posts=posts,
             categories=categories)
 
     return redirect(url_for("login"))
@@ -211,9 +211,12 @@ def delete_post(post_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
-@app.route("/save_post/<post_id>", methods=["GET", "POST"])
+@app.route("/save_post/<post_id>", methods=["GET"])
 def save_post(post_id):
-    if request.method == "POST":
+    if request.method == "GET":
+        user = mongo.db.users.find_one_or_404({"username": session["user"]})
+        user.favorite_posts.append(post_id)
+        mongo.db.users.save(user)
         flash("Post saved")
         return redirect(url_for("profile", username=session["user"]))
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
