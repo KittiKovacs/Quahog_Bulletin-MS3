@@ -211,16 +211,17 @@ def delete_post(post_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
-@app.route("/save_post/<post_id>", methods=["GET"])
+@app.route("/save_post/<post_id>", methods=["POST"])
 def save_post(post_id):
-    if request.method == "GET":
+    if request.method == "POST":
         user = mongo.db.users.find_one_or_404({"username": session["user"]})
         user.favorite_posts.append(post_id)
-        mongo.db.users.save(user)
-        flash("Post saved")
+        mongo.db.users.save()
+        flash("Post added to favorites")
         return redirect(url_for("profile", username=session["user"]))
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    return render_template("profile.html", post=post, post_id=post_id)
+    return render_template(
+        "profile.html", user=user, post=post, post_id=post_id)
 
 
 # Manage categories-Admin functions
