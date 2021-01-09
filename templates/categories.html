@@ -52,7 +52,8 @@
                 </li>
             {% else %}
                 <li>
-                    <form action="{{ url_for('save_post', post_id=post._id) }}" method="POST" class="save btn-floating btn-small yellow"><i class="fas fa-save"></i>
+                    <form action="{{ url_for('save_post', post_id=post._id) }}" method="POST">
+                        <button type="submit" class="save btn-floating btn-small yellow"><i class="fas fa-save"></i></button>
                     </form>
                 </li>
             {% endif %}

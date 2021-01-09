@@ -105,11 +105,15 @@ def profile():
     if session["user"]:
         user = mongo.db.users.find_one_or_404({"username": session["user"]})
         categories = list(mongo.db.categories.find())
-        posts = mongo.db.posts.find()
+        posts = mongo.db.posts.find({"created_by": user['username']})
+        if "favorite_posts" in user:
+            obj_ids = [ObjectId(x) for x in user["favorite_posts"] if x != ""]
+            fav_posts = mongo.db.posts.find({"_id": {"$in": obj_ids}})
+        else:
+            fav_posts = []
         return render_template(
             "profile.html", username=session["user"], posts=posts,
-            categories=categories)
-
+            fav_posts=fav_posts, categories=categories)
     return redirect(url_for("login"))
 
 
@@ -215,13 +219,15 @@ def delete_post(post_id):
 def save_post(post_id):
     if request.method == "POST":
         user = mongo.db.users.find_one_or_404({"username": session["user"]})
-        user.favorite_posts.append(post_id)
-        mongo.db.users.save()
+        if "favorite_posts" in user:
+            user["favorite_posts"].append(post_id)
+        else:
+            user["favorite_posts"] = [post_id]   # in case the object does not have the favorite_posts property
+        mongo.db.users.update_one(
+            {"_id": ObjectId(user["_id"])},
+            {"$set": {"favorite_posts": user["favorite_posts"]}})
         flash("Post added to favorites")
         return redirect(url_for("profile", username=session["user"]))
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    return render_template(
-        "profile.html", user=user, post=post, post_id=post_id)
 
 
 # Manage categories-Admin functions

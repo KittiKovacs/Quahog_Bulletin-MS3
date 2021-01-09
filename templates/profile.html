@@ -59,24 +59,22 @@
     </div>
 </div>
 
-{% for post in posts %}
-
-<div class="col s4">
-        <div class="card small yellow lighten-5 hoverable">
-            <div class="card-content">                
-                <p><em>Created by: {{ post.created_by }}</em></p>
-                <p><em>In category: {{ post.category_name }}</em></p>
-                <span class="card-title ">{{ post.title }}</span>                
-                <p class="truncate card-text">{{ post.description }}</p>
-            </div>
-            <div>
-                <a class="card-action" href="{{ url_for('view_post', post_id=post._id) }}">View post</a>
-            </div>
+<div class="row">
+    <h4 class="center-align dark-blue-text text-darken-4">Favorite posts</h4>
+    {% for fpost in fav_posts %}
+    <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+        <div class="card-content">
+            <p><em>Created by: {{ fpost.created_by }}</em></p>
+            <p><em>In category: {{ fpost.category_name }}</em></p>
+            <span class="card-title ">{{ fpost.title }}</span>
+            <p class="truncate card-text">{{ fpost.description }}</p>
+        </div>
+        <div>
+            <a class="card-action" href="{{ url_for('view_post', post_id=fpost._id) }}">View post</a>
         </div>
     </div>
+    {% endfor %}
 </div>
-
-{% endfor %}
 
 
 {% endblock %}
