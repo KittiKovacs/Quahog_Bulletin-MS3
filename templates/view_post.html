@@ -16,7 +16,7 @@
             <img src="{{url_for('img_uploads', filename=post['post_image'])}}" alt="post_image" id="myImg">
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
+                <img class="modal-content" id="img01" alt="image_in_modal">
             </div>
             {% endif %}
         </div>
@@ -27,7 +27,7 @@
         {% if session.user|lower == post.created_by|lower %}
 
         <a id="edit-button" class=" blue-text text-darken-2 #fdd835 blue lighten-1 center-align btn"
-            href="{{ url_for('edit_post', post_id=post._id) }}"><i class="fas fa-pencil-alt" alt="Edit"></i></a>
+            href="{{ url_for('edit_post', post_id=post._id) }}"><i class="fas fa-pencil-alt"></i></a>
 
         <a id="delete-button" class=" blue-text text-darken-2 #fdd835 red lighten-1 center-align btn"
             href="{{ url_for('delete_post', post_id=post._id) }}"><i class="fas fa-trash-alt"></i></a>

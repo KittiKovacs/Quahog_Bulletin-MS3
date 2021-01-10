@@ -15,18 +15,16 @@
                     <i class="fas fa-plus"></i>
                 </a>
                 <ul>
-                    <li><a class="btn-floating btn-small blue"
-                            href="{{ url_for('edit_category', category_id=category._id) }}"><i class="fas fa-pencil-alt"
-                                alt="Edit"></i></a></li>
-                    <li><a class="btn-floating btn-small red"
-                            href="{{ url_for('delete_category', category_id=category._id) }}"><i
+                    <li><a class="btn-floating btn-small blue" href="{{ url_for('edit_category', category_id=category._id) }}"><i
+                                class="fas fa-pencil-alt"></i></a></li>
+                    <li><a class="btn-floating btn-small red" href="{{ url_for('delete_category', category_id=category._id) }}"><i
                                 class="fas fa-trash-alt"></i></a></li>
                 </ul>
             </div>
             {% endif %}
 
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{url_for('img_uploads', filename=category['category_image']) }}" width="auto">
+                <img class="activator" src="{{url_for('img_uploads', filename=category['category_image']) }}" width="auto" alt="category_image">
             </div>
             <div class="card-content">
                 <span class="card-title activator">{{ category.category_name }}</span>
@@ -45,7 +43,7 @@
     {% if session.user|lower == "admin"|lower %}
     <div class="col s12 m6 l4 card medium yellow lighten-5">
         <div class="card-content center-align">                
-            <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png"/>               
+            <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png/" alt="create_new_category" >               
         </div>
         <div>
             <a class="card-action" href="{{ url_for('create_category') }}">Create new category</a>
