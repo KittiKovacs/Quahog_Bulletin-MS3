@@ -317,7 +317,7 @@ I used https://jshint.com/  to check the JavaScript code.
 ### Problems encountered
 
 #### Image uploads
-To insert an image into MongoDB I learned from the Pretty Printed Youtube channel https://www.youtube.com/watch?v=DsgAuceHha4
+To insert an image into MongoDB I learned from the Pretty Printed Youtube channel https://www.youtube.com/watch?v=DsgAuceHha4 which I discovered when looking at the code from this project: https://github.com/elenasacristan/CookBook
 It did not work for me at first so I asked for tutor advice. They suggested that I find an alternative storage for the images as
 MongoDB is not the best solution for this. In the end I decided I am not giving up on this as I've seen it work on the video and on a live example as well. 
 It seemed that the code worked after all and there was a connection issue with MongoDB.
@@ -325,13 +325,13 @@ The code now works and I am able to insert images.
 
 #### Giving different rights to users
 I wanted Admin to have rights to create a post in the Admin category, and all other users to every other category.
-In order to achieve this I had to figure out how to filter the dropdown list. After several different versions I managed to find a solution,
-which meant I researched Jinja templating and syntax extensively. 
+In order to achieve this I had to figure out how to filter the dropdown list .
+I first specified which category the Admin user should have access to by using an if statement; and second I created an if statement inside a for loop for every other user, excluding the category I don't want them to be able to use by using a != operator. 
 
+#### Favorite posts
+To create an option for marking posts as favorites and displaying them on the User's profile page I required guidance from my Mentor as I wasn't able to find a useful example that I could study.
+The solution was to create a new key-value pair in the user object "favorite_posts" which takes the post_ids as values. This is used in the save_post function in the application so that if the save button is clicked it updates the user's object.
 
-#### Saving posts
-#### Categories page
-Many issues during development came from the fact that I left room for creating a new category which made the development process longer than I expected.
 
 ## Deployment
 

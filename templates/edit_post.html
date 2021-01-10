@@ -18,11 +18,11 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled>Choose a board to post on</option>
                     {% for category in categories %}
-                        {% if category.category_name == post.category_name %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                        {% else %}
-                            <option value="{{category.category_name}}">{{category.category_name}}</option>
-                        {% endif %}
+                    {% if category.category_name == post.category_name %}
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                    <option value="{{category.category_name}}">{{category.category_name}}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
             </div>
@@ -34,13 +34,14 @@
             </div>
             <!-- description -->
             <div class="input-field">
-                <input id="description" name="description" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.description -}}" required>
+                <input id="description" name="description" class="materialize-textarea validate" minlength="5"
+                    maxlength="500" value="{{- post.description -}}" required>
                 <label for="description">Description</label>
             </div>
             <!--contact details-->
             <div class="input-field">
-                <input id="contact_details" name="contact_details" type="text" class="materialize-textarea validate" minlength="5" maxlength="500" value="{{- post.contact_details -}}"
-                    required>
+                <input id="contact_details" name="contact_details" type="text" class="materialize-textarea validate"
+                    minlength="5" maxlength="500" value="{{- post.contact_details -}}" required>
                 <label for="contact_details">Contact details</label>
             </div>
             <!--image upload-->
@@ -72,10 +73,10 @@
                     value="Submit"> Submit
                 </button>
                 <a id="back-button" class=" blue-text text-darken-2 #fdd835 red lighten-1 center-align btn"
-                href="{{ url_for('profile', username=session['user']) }}" >Cancel</a>
+                    href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
             </div>
         </form>
     </div>
 </div>
-    
+
 {% endblock %}

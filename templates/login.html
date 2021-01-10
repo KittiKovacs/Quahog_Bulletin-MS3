@@ -1,41 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h4 class="center-align">Welcome back! Log in here</h4>
+<h4 class="center-align">Already registered? Log in here</h4>
 
 <div class="row">
-        <form class="col s12 m6 offset-m3"  method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel #fffde7 yellow lighten-5">
-                <!-- username -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
-					</div>
-                </div>
-                <!-- password -->
-                <div class="row">
-                    <div class="input-field col s12">
-						<i class="fas fa-unlock-alt prefix light-blue-text text-darken-4"></i>
-                        <input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row center-align">
-				        <button type="submit" class="btn blue-text text-darken-2 #fdd835 yellow darken-1">Log in
-                        </button>
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
+        <div class="card-panel #fffde7 yellow lighten-5">
+            <!-- username -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="username">Username</label>
                 </div>
             </div>
-        </form>
+            <!-- password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-unlock-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <button type="submit" class="btn blue-text text-darken-2 #fdd835 yellow darken-1">Log in
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
 <div class="row">
-	<p class="col s12  center-align">No account yet?
-		<a href="{{url_for('register')}}"><strong>Register here!</strong>
-		</a>
-	</p>
+    <p class="col s12  center-align">No account yet?
+        <a href="{{url_for('register')}}"><strong>Register here!</strong>
+        </a>
+    </p>
 </div>
 
 {% endblock %}

@@ -11,20 +11,23 @@
 
 <div class="row container">
     <div class="col s12">
-        <form method="POST" action="{{ url_for('edit_category', category_id=category._id) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url_for('edit_category', category_id=category._id) }}"
+            enctype="multipart/form-data">
             <!-- Category name -->
             <div class="input-field">
-                <input id="category_name" name="category_name" type="text" minlength="5" maxlength="50" value="{{category.category_name}}" class="validate" required>
+                <input id="category_name" name="category_name" type="text" minlength="5" maxlength="50"
+                    value="{{category.category_name}}" class="validate" required>
                 <label for="category_name"></label>
             </div>
 
             <!-- description -->
             <div class="input-field">
-                <textarea id="category_description" name="category_description"  class="materialize-textarea validate" minlength="5" maxlength="500" value="{{category.category_description}}"
+                <textarea id="category_description" name="category_description" class="materialize-textarea validate"
+                    minlength="5" maxlength="500" value="{{category.category_description}}"
                     required>{{category.category_description}}</textarea>
                 <label for="category_description"></label>
             </div>
-            
+
             <!--image upload-->
             <div class="row img-details">
                 <div class="file-field input-field">
@@ -39,15 +42,15 @@
             </div>
             <!--buttons -->
             <div class="center-align">
-                <button type="submit"
-                    class="btn blue-text text-darken-2 #fdd835 yellow darken-1 center-align" value="Submit"> Done
+                <button type="submit" class="btn blue-text text-darken-2 #fdd835 yellow darken-1 center-align"
+                    value="Submit"> Done
                 </button>
                 <a id="back-button" class=" blue-text text-darken-2 #fdd835 red lighten-1 center-align btn"
-                href="{{ url_for('profile', username=session['user']) }}" >Cancel</a>
+                    href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
             </div>
         </form>
     </div>
 </div>
-    
-    
+
+
 {% endblock %}

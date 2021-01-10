@@ -152,6 +152,10 @@ def posts(category):
           'categories.html', posts=filtered_posts, categories=categories)
 
 
+# Image uploads from https://www.youtube.com/watch?v=DsgAuceHha4
+# and I also got ideas from https://github.com/elenasacristan/CookBook
+
+
 @app.route("/create_post", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
@@ -181,6 +185,7 @@ def img_uploads(filename):
 
 @app.route('/view_post/<post_id>')
 def view_post(post_id):
+
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     return render_template('view_post.html', post=post, post_id=post_id)
 
