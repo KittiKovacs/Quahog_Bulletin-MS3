@@ -235,9 +235,11 @@ There are some differences between the wireframes I created initially and the co
 
 ### Database Choice
 
+I am using MongoDb Atlas as a database for my project.
+
 ### Data modelling
 
-![Schema](static/img/design/Schema_MS3.jpg)
+![Schema](static/img/data/Schema_MS3.jpg)
 
 ## Technologies Used
 
