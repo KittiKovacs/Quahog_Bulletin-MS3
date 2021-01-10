@@ -25,7 +25,8 @@ def index():
     return render_template("index.html", categories=categories)
 
 
-# Error handling from https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+# Error handling from
+# https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 
 
 @app.errorhandler(404)
@@ -146,9 +147,9 @@ def search():
 @app.route("/posts/<category>")
 def posts(category):
     categories = list(mongo.db.categories.find())
-    posts = mongo.db.posts.find()
+    filtered_posts = mongo.db.posts.find({"category_name": category})
     return render_template(
-        "categories.html", posts=posts, categories=categories)
+          'categories.html', posts=filtered_posts, categories=categories)
 
 
 @app.route("/create_post", methods=["GET", "POST"])
@@ -222,7 +223,8 @@ def save_post(post_id):
         if "favorite_posts" in user:
             user["favorite_posts"].append(post_id)
         else:
-            user["favorite_posts"] = [post_id]   # in case the object does not have the favorite_posts property
+            user["favorite_posts"] = [post_id]
+            # in case the object does not have the favorite_posts property
         mongo.db.users.update_one(
             {"_id": ObjectId(user["_id"])},
             {"$set": {"favorite_posts": user["favorite_posts"]}})
