@@ -50,7 +50,7 @@
 <!--mobile sidenav-->
         <ul class="sidenav #1a237e indigo darken-4" id="mobile-demo">
             <li><a href="{{ url_for('index') }}"><img class="sidenav-icon"
-                        src="https://img.icons8.com/cute-clipart/64/000000/home.png" /> Home</a></li>
+                        src="https://img.icons8.com/cute-clipart/64/000000/home.png" />Home</a></li>
             <li><a href="{{ url_for('get_categories') }}"><img class="sidenav-icon"
                         src="https://img.icons8.com/color/48/000000/pricing-structure.png" /> Bulletin Boards</a></li>
             {% if session.user %}
@@ -105,16 +105,18 @@
                         </ul>
 				</div>
 				<div class="col l4 offset-l2 s12">
-					<h5 class="left-align">Address:</h5>
-						<p>555 Washington Ave.<p>
-						<p>Quahog</p>
-						<p>02861</p>
-						<p>Rhode Island</p>
+                    <h5 class="left-align">Address:</h5>
+                    <ul>
+						<li>555 Washington Ave.</li>
+						<li>Quahog</li>
+						<li>02861</li>
+                        <li>Rhode Island</li>
+                    </ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
-			<div class="container">
+			<div>
 				<p class="copyright">Copyright &copy; Quahog City Council <span id="copyright"></span></p>
 			</div>
 		</div>
