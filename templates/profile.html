@@ -63,7 +63,18 @@
 
 <div class="row">
     {% for fpost in fav_posts %}
+    {% if session.user %}
     <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+        <div class="fixed-action-btn horizontal">
+            <a class="btn-floating btn-small red"><i class="fas fa-plus"></i></a>
+            <ul>
+                <li>
+                    <form action="{{ url_for('unsave_post', post_id=fpost._id) }}" method="POST">
+                        <button type="submit" class="save btn-floating btn-small yellow"><i class="fas fa-minus-square"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
         <div class="card-content">
             <p><em>Created by: {{ fpost.created_by }}</em></p>
             <p><em>In category: {{ fpost.category_name }}</em></p>
@@ -74,6 +85,7 @@
             <a class="card-action" href="{{ url_for('view_post', post_id=fpost._id) }}">View post</a>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 

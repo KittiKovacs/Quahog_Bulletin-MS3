@@ -237,6 +237,18 @@ def save_post(post_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/unsave_post/<post_id>", methods=["POST"])
+def unsave_post(post_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one_or_404({"username": session["user"]})
+        if "favorite_posts" in user:
+            user["favorite_posts"].remove(post_id)
+        mongo.db.users.update_one(
+            {"_id": ObjectId(user["_id"])},
+            {"$set": {"favorite_posts": user["favorite_posts"]}})
+        flash("Post removed from favorites")
+        return redirect(url_for("profile", username=session["user"]))
+
 # Manage categories-Admin functions
 
 

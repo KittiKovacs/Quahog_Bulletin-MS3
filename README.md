@@ -1,6 +1,7 @@
-# Quahog City Council Bulletin Board  
+# Milestone 3 : Quahog City Council Bulletin Board  
 
-## The Online Bulletin Board of the fictional city of Quahog                                          
+## The Online platform for the inhabitants of the fictional city of Quahog for sharing ideas, thoughts and much more!   
+
 
 The aim with the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
 
@@ -33,7 +34,7 @@ As a user I want to see what other users posted in each category.
 
 As a user I want to be able to save posts that I find interesting and view them in my profile page.
 
-As a user I want to see who created each post.
+As a user I want to see who created each post and how to get in touch with them.
 
 As a user who has admin rights I want to be able to add a new category if needed.
 
@@ -130,7 +131,7 @@ There are some differences between the wireframes I created initially and the co
 
 - Mobile Collapse Button / Sidebar: The Mobile Collapse Button will appear on medium and small screens and shows the side navigation bar.
 
-- Tooltips: Materialize tooltips show up to give the user further explanation on the purpose of certain fields in the registration form and buttons.
+- Tooltips: Materialize tooltips show up to give the user further explanation on the purpose of certain fields such as in the registration form.
 
 - Footer: from Materialize to include the contact details for the City Hall and copyright information.
 
@@ -162,7 +163,6 @@ There are some differences between the wireframes I created initially and the co
 - The User's profile page is divided into 2 sections: the top section contains all posts created by the user, the bottom section contains posts created by other users that the current user saved for easier access.
 
 - The User has permission to edit or delete their own posts from here and also to remove posts from the saved section.
-
 
 
 #### Boards
@@ -209,16 +209,17 @@ There are some differences between the wireframes I created initially and the co
 
 - The user can delete any post that they created. 
 
-- The delete icon appears when they hover over the Floating Action Button.
+- The delete icon (trashcan) appears when they hover over the Floating Action Button.
 
 - The app displays a flash message to let the user know that the post has been deleted.
 
 
 #### Admin
 
-- Admin user is able to create posts on the Announcements page. They don't have access to any other options from the dropdown list.
+- Admin user is able to create posts on the Announcements page or from their profile page. They don't have access to any other categories from the dropdown list.
 
 - They are also able to create, edit or delete categories as well as posts. There is an additional menu item available for Admin only named Create Board that serves this purpose.
+
 
 #### Error handling
 
@@ -265,11 +266,13 @@ I am using MongoDb Atlas as a database for my project.
 
 - Balsamiq for creating wireframes
 
-- Font Awesome
+- [Am I responsive?](http://ami.responsivedesign.is/) to demonstrate responsiveness in this README file.
 
-- Google Fonts
+- [Font Awesome](https://fontawesome.com/) for icons.
 
-- Icons 8 for certain icons
+- [Google Fonts](https://fonts.google.com/)
+
+- [Icons 8](https://icons8.com/) for sidenav icons
 
 ### Databases
 
@@ -278,10 +281,12 @@ I am using MongoDb Atlas as a database for my project.
 
 ## Testing
 
+
 ### Testing in different browsers
 
-I used Google Chrome throughout the development. The app has been tested and works well on Firefox and Microsoft Edge.
-
+I used Google Chrome throughout the development. I used the Development tools throughout the whole process to help me with styling issues and make sure the site is responsive. 
+The app has been tested on Firefox and Microsoft Edge.
+The app has been tested on mobile versions of Google Chrome and Safari and works without issues.
 
 ### Testing against the user stories
 
@@ -291,19 +296,19 @@ As user 2 I am able to upload a photo to my post from my computer when creating 
 
 As user 3 I can edit or delete my posts.
 
-As user 4 I can see announcements created by the city council by clicking on the relevant link on the Boards page.
+As user 4 I can see announcements created by the city council by clicking on the relevant link on the Boards page or in the navbar.
 
-As user 5 I can to see what other users posted in each category by selecting the relevant category's page.
+As user 5 I can to see what other users posted in each category by selecting the relevant category's page. Each post is displayed on a card on a light yellow background and contains a link which allows me to read the full post.
 
 As user 6 I can save other users' posts by moving my mouse over the floating action button and clicking on the save icon. They are displayed in my profile page from where I can remove them
 
-As user 7 I can see who created each post just by looking at each card or if clicking on view post.
+As user 7 I can see who created each post just by looking at each card or clicking on "view post".
 
-As Admin I can create a new category from the Boards page.
+As Admin I can create a new category from the Boards page and upload a cover image for the card representing the category.
 
-As user 9 who is in a hurry I can use the search field on the categor's page to filter the posts for certain keywords.
+As user 9 who is in a hurry I can use the search field on the category's page to filter the posts for certain keywords.
 
-As  user 10 who is not a resident I am allowed see what's going on in the city without logging in.
+As  user 10 who is not a resident I am allowed see what's going on in the city without logging in. I have access to categories and can view the posts, however I can't interact with them as registered users can.
 
 As user 11 who would like to get in touch with the Council directly I can find the contact details and opening hours in the footer of each page.
 
@@ -319,7 +324,7 @@ I used https://jshint.com/  to check the JavaScript code.
 ### Problems encountered
 
 #### Image uploads
-To insert an image into MongoDB I learned from the Pretty Printed Youtube channel https://www.youtube.com/watch?v=DsgAuceHha4 which I discovered when looking at the code from this project: https://github.com/elenasacristan/CookBook
+To insert an image into MongoDB I learned from the [Pretty Printed Youtube channel](https://www.youtube.com/watch?v=DsgAuceHha4) which I discovered when looking at the code from this project: https://github.com/elenasacristan/CookBook
 It did not work for me at first so I asked for tutor advice. They suggested that I find an alternative storage for the images as
 MongoDB is not the best solution for this. In the end I decided I am not giving up on this as I've seen it work on the video and on a live example as well. 
 It seemed that the code worked after all and there was a connection issue with MongoDB.
@@ -385,21 +390,27 @@ Now the automatic deployment is set up I removed Heroku remote on Github: git re
 
 ### Code
 
+During the development I heavly relied on the Data Centric Development course material, more specifically I used many solutions I learned from the the Task Manager and Thorin and company projects.
+
+Another important source was the Materialize style library which I found easy to work with and I was very happy with the result.
+
+I watched tutorial videos such as the [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) Youtube channel and the following source: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world.
+
+I also used the [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data) when doing my research.
+
 ### Content and Media
 
-The user's names and images are from the following website: https://familyguy.fandom.com/wiki/Family_Guy:_The_Top_20_Characters
-
+The user's names and city hall image are from the [Family Guy fanpage](https://familyguy.fandom.com/wiki/Family_Guy:_The_Top_20_Characters)
+Images from Freepik.com and Icons8.com.
 
 
 ## Acknowledgements
 
 Many thanks to my Mentor Guido Cecilio Garcia Bernal for offering guidance and constructive crticism.
 Similarly, the Tutors at Code Institue were a big help when I got stuck in the process.
+Also a big thanks to the Slack community who helped me brainstorm when I needed it.
 
 ## Disclaimer 
 
-The page has been created for educational purpose, not for commercial use. 
+The page has been created for educational purpose only, not for commercial use. 
 
-
-
-### Acknowledgements
