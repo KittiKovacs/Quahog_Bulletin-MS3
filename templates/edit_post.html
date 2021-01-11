@@ -15,7 +15,7 @@
             <!--category selection-->
             <div class="input-field">
                 <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
-                <select id="category_name" name="category_name" class="validate" required>
+                <select id="category_name" name="category_name" class="validate">
                     <option value="" disabled selected>Choose a board for your post</option>
                     {% if session.user|lower == "admin"|lower %}
                     <option>Announcements</option>
@@ -30,20 +30,20 @@
             </div>
             <!-- Post title -->
             <div class="input-field">
-                <input id="title" name="title" type="text" minlength="5" maxlength="50" value=" {{ post.title }}"
-                    class="validate" required>
+                <input id="post-title" name="title" type="text" minlength="5" maxlength="50" value=" {{ post.title }}"
+                    class="validate">
                 <label for="title">Title</label>
             </div>
             <!-- description -->
             <div class="input-field">
                 <input id="description" name="description" class="materialize-textarea validate" minlength="5"
-                    maxlength="500" value="{{- post.description -}}" required>
+                    maxlength="500" value="{{- post.description -}}">
                 <label for="description">Description</label>
             </div>
             <!--contact details-->
             <div class="input-field">
                 <input id="contact_details" name="contact_details" type="text" class="materialize-textarea validate"
-                    minlength="5" maxlength="500" value="{{- post.contact_details -}}" required>
+                    minlength="5" maxlength="500" value="{{- post.contact_details -}}">
                 <label for="contact_details">Contact details</label>
             </div>
             <!--image upload-->
