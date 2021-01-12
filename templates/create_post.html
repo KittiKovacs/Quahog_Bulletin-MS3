@@ -19,13 +19,13 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose a board for your post</option>
                     {% if session.user|lower == "admin"|lower %}
-                    <option>Announcements</option>
+                        <option>Announcements</option>
                     {% else %}
-                    {% for category in categories %}
-                    {% if category.category_name!="Announcements" %}
-                    <option value="{{category.category_name}}">{{category.category_name}}</option>
-                    {% endif%}
-                    {% endfor %}
+                        {% for category in categories %}
+                            {% if category.category_name!="Announcements" %}
+                            <option value="{{category.category_name}}">{{category.category_name}}</option>
+                            {% endif%}
+                        {% endfor %}
                     {% endif %}
                 </select>
                 <label for="category_name">Categories</label>

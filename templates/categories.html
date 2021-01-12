@@ -4,9 +4,10 @@
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <h4>{{ posts.category_name }}</h4>
+        <h4>{{ posts.category_name}}</h4>
     </div>
 </div>
+
 <div class="row">
     <div class="col s12 left-align">
         <a id="back-button" class=" blue-text text-darken-2 #fdd835 yellow darken-1 center-align btn-small"
@@ -63,7 +64,7 @@
         <div class="card-content">
             <p><em>Created by: {{ post.created_by }}</em></p>
             <p><em>In category: {{ post.category_name }}</em></p>
-            <span class="card-title ">{{ post.title }}</span>
+            <span class="truncate card-title ">{{ post.title }}</span>
             <p class="truncate card-text">{{ post.description }}</p>
         </div>
         <div>
