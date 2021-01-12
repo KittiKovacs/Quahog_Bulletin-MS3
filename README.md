@@ -3,7 +3,7 @@
 ## The Online platform for the inhabitants of the fictional city of Quahog for sharing ideas, thoughts and much more!   
 
 
-The aim with the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
+The aim of the project is to create a full stack site that allows users to Create, Edit, Read and Delete data in a way that's easily manageable for all users as well as giving them a great user experience.
 
 Please see the link to the live page below:
 
