@@ -9,15 +9,16 @@ from werkzeug.exceptions import HTTPException
 if os.path.exists("env.py"):
     import env
 
+# creating an instance of the application
 
 app = Flask(__name__)
 
-
+# environment variables
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app)
+mongo = PyMongo(app)   #connect to Mongo
 
 
 @app.route('/')
@@ -41,6 +42,8 @@ def internal_server_error(e):
 
 
 # User authentication
+
+# Register new user
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -70,6 +73,9 @@ def register():
 
     categories = list(mongo.db.categories.find())
     return render_template("register.html", categories=categories)
+
+
+# Login for existing user
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -102,6 +108,9 @@ def login():
     return render_template("login.html", categories=categories)
 
 
+# Display user profile page
+
+
 @app.route("/profile", methods=["GET"])
 def profile():
     if session["user"]:
@@ -119,6 +128,9 @@ def profile():
     return redirect(url_for("login"))
 
 
+# Logout functionality
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -127,10 +139,16 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Display categories
+
+
 @app.route('/get_categories')
 def get_categories():
     categories = list(mongo.db.categories.find())
     return render_template('board.html', categories=categories)
+
+
+# Search posts
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -144,6 +162,7 @@ def search():
 
 # CRUD functions-post management
 
+# Get posts that belong in the same category
 
 @app.route("/posts/<category>")
 def posts(category):
@@ -154,8 +173,7 @@ def posts(category):
           category=category)
 
 
-# Image uploads from https://www.youtube.com/watch?v=DsgAuceHha4
-# and I also got ideas from https://github.com/elenasacristan/CookBook
+# Create post functionality
 
 
 @app.route("/create_post", methods=["GET", "POST"])
@@ -180,9 +198,16 @@ def create_post():
     return render_template("create_post.html", categories=categories)
 
 
+# Image uploads from https://www.youtube.com/watch?v=DsgAuceHha4
+# and I also got ideas from https://github.com/elenasacristan/CookBook
+
+
 @app.route('/img_uploads/<filename>')
 def img_uploads(filename):
     return mongo.send_file(filename)
+
+
+# View post functionality
 
 
 @app.route('/view_post/<post_id>')
@@ -190,6 +215,9 @@ def view_post(post_id):
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     return render_template('view_post.html', post=post, post_id=post_id)
+
+
+# Edit post functionality
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
@@ -216,11 +244,18 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post, categories=categories)
 
 
+# Delete post functionality
+
+
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post deleted")
     return redirect(url_for("profile", username=session["user"]))
+
+
+
+# Add post to User's favorite posts
 
 
 @app.route("/save_post/<post_id>", methods=["POST"])
@@ -239,6 +274,9 @@ def save_post(post_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Remove post from to User's favorite posts
+
+
 @app.route("/unsave_post/<post_id>", methods=["POST"])
 def unsave_post(post_id):
     if request.method == "POST":
@@ -251,8 +289,9 @@ def unsave_post(post_id):
         flash("Post removed from favorites")
         return redirect(url_for("profile", username=session["user"]))
 
-# Manage categories-Admin functions
 
+# Manage categories-Admin functions
+# Create a new category
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
@@ -272,6 +311,9 @@ def create_category():
 
     categories = list(mongo.db.categories.find())
     return render_template("create_category.html", categories=categories)
+
+
+# Edit a category
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -294,6 +336,9 @@ def edit_category(category_id):
     categories = list(mongo.db.categories.find())
     return render_template(
         "edit_category.html", categories=categories, category=category)
+
+
+# Delete a category
 
 
 @app.route("/delete_category/<category_id>")
