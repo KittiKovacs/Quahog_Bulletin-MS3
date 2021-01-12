@@ -7,7 +7,7 @@
     <link rel="icon" type="image/jpg" sizes="64x64" href="{{url_for('static', filename='img/quahog-city-hall.png')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
-    <link href="css/materialert.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Delius:wght@100;400&display=swap" rel="stylesheet">
     <title>Quahog City Bulletin</title>
@@ -87,11 +87,12 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-        <div class="materialert warning">
-            <div class="material-icons">warning</div>
-            <span>{{ message }}</span>
-            <button type="button" class="close-alert">×</button>
-        </div>
+        
+            <div class="materialert warning">
+                <div class="material-icons">warning</div>
+                <span>{{ message }}</span>
+                <button type="button" class="close-alert">×</button>
+            </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}

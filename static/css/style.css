@@ -55,11 +55,6 @@ main {
     flex: 1 0 auto;
 }
 
-/*.flashes h4 {
-    line-height: 2;
-    color: red;
-}*/
-
 .materialert{
     position: relative;
     min-width: 150px;
@@ -102,6 +97,7 @@ main {
 .materialert.warning{
     background-color: #fbc02d;
     color: #fff;
+    text-align: center;
 }
 
 button{
@@ -130,7 +126,7 @@ button{
 #post-title{
     margin-top:40px;
     margin-bottom: 40px;
-    font-size: 30px;
+    font-size: 20px;
 }
 #post-description{
     margin-top:40px;
