@@ -230,7 +230,14 @@ There are some differences between the wireframes I created initially and the co
 
 - Allow users to upload multiple images to each posts.
 
+- Allow users to delete their account.
+
+- Allow Admin to manage users and posts.
+
+- Add pagination.
+
 - Add a comment section whereby the users can have a conversation with each other.
+
 
 ## Information architecture
 
@@ -353,7 +360,7 @@ I created an env.py file that contains my environment variables:
     import os
     os.environ.setdefault("IP", "0.0.0.0")
     os.environ.setdefault("PORT", "5000")
-    os.environ.setdefault("SECRET_KEY", "Pfr4JFTqo9")
+    os.environ.setdefault("SECRET_KEY", "THIS_IS_A_SECRET")
     os.environ.setdefault("MONGO_URI", "mongodb+srv://KKMongo:PASSWORD@cluster1.pdufo.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority")
     os.environ.setdefault("MONGO_DBNAME", "bulletin")
 

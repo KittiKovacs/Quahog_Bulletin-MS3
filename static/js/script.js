@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
@@ -6,13 +6,16 @@ $(document).ready(function(){
     $('#copyright').text(new Date().getFullYear());
     $('.dropdown-trigger').dropdown({
         coverTrigger: false,
-        hover:true
+        hover: true
     });
     $('.fixed-action-btn').floatingActionButton();
+    $(".materialert > .close-alert").click(function (){
+    $(this).parent().hide('slow');
+    });
 
-  /*dropdown field validation from  taks manager mini project course material*/
+    /*dropdown field validation from  taks manager mini project course material*/
 
-validateMaterializeSelect();
+    validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
         let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
@@ -41,28 +44,32 @@ validateMaterializeSelect();
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.fixed-action-btn');
     let instances = M.FloatingActionButton.init(elems, {
-      direction: 'right'
+        direction: 'right'
     });
-  });
+});
 
 let modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 let img = document.getElementById("myImg");
 let modalImg = document.getElementById("img01");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
+if (img) {
+    img.addEventListener("click", function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    });
 }
+
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
+if (span) {
+    span.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
 }
-

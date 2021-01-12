@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.exceptions import HTTPException
 if os.path.exists("env.py"):
     import env
 
@@ -29,12 +30,12 @@ def index():
 # https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 
 
-@app.errorhandler(404)
+@app.errorhandler(HTTPException)
 def page_not_found(e):
     return render_template('404.html'), 404
 
 
-@app.errorhandler(500)
+@app.errorhandler(Exception)
 def internal_server_error(e):
     return render_template('500.html'), 500
 
@@ -149,7 +150,8 @@ def posts(category):
     categories = list(mongo.db.categories.find())
     filtered_posts = mongo.db.posts.find({"category_name": category})
     return render_template(
-          'categories.html', posts=filtered_posts, categories=categories)
+          'categories.html', posts=filtered_posts, categories=categories,
+          category=category)
 
 
 # Image uploads from https://www.youtube.com/watch?v=DsgAuceHha4

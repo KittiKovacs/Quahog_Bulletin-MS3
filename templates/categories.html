@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <h4>{{ posts.category_name}}</h4>
+        <h4>{{ category }}</h4>
     </div>
 </div>
 
@@ -33,15 +33,27 @@
 </div>
 
 <div class="row">
-{% for post in posts %}
-        <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+    <!--Link to create new post-->
+    {% if session.user %}
+
+    <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
+        <div class="card-content center-align">
+            <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png/" alt="create_new_post">
+        </div>
+        <div>
+            <a class="card-action" href="{{ url_for('create_post') }}">Create new post</a>
+        </div>
+    </div>
+    {% endif %}
+    {% for post in posts %}
+    <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
 
         {% if session.user %}
 
         <div class="fixed-action-btn horizontal">
             <a class="btn-floating btn-small red"><i class="fas fa-plus"></i></a>
             <ul>
-            {% if session.user|lower == post.created_by|lower %}
+                {% if session.user|lower == post.created_by|lower %}
                 <li>
                     <a class="btn-floating btn-small blue" href="{{ url_for('edit_post', post_id=post._id) }}"><i
                             class="fas fa-pencil-alt"></i></a>
@@ -50,13 +62,14 @@
                     <a class="btn-floating btn-small red" href="{{ url_for('delete_post', post_id=post._id) }}"><i
                             class="fas fa-trash-alt"></i></a>
                 </li>
-            {% else %}
+                {% else %}
                 <li>
                     <form action="{{ url_for('save_post', post_id=post._id) }}" method="POST">
-                        <button type="submit" class="save btn-floating btn-small yellow"><i class="fas fa-save"></i></button>
+                        <button type="submit" class="save btn-floating btn-small yellow"><i
+                                class="fas fa-save"></i></button>
                     </form>
                 </li>
-            {% endif %}
+                {% endif %}
             </ul>
         </div>
         {% endif %}
@@ -70,25 +83,10 @@
         <div>
             <a class="card-action" href="{{ url_for('view_post', post_id=post._id) }}">View post</a>
         </div>
-        </div>
+    </div>
 
     {% endfor %}
-
-
-<!--Link to create new post-->
-    {% if session.user %}
-
-        <div class="col s12 m6 l4 card small yellow lighten-5 hoverable">
-            <div class="card-content center-align">                
-                <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png/" alt="create_new_post">               
-            </div>
-            <div>
-                <a class="card-action" href="{{ url_for('create_post') }}">Create new post</a>
-            </div>
-        </div>
-    {% endif %}
 </div>
 
 
 {% endblock %}
-
