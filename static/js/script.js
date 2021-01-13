@@ -44,6 +44,7 @@ $(document).ready(function () {
     }
 });
 
+// Fixed action button
 document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.fixed-action-btn');
     let instances = M.FloatingActionButton.init(elems, {
@@ -51,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-let modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal")
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
+// Get the image inside the modal
 let img = document.getElementById("myImg");
 let modalImg = document.getElementById("img01");
 if (img) {
@@ -62,8 +63,6 @@ if (img) {
         modalImg.src = this.src;
     });
 }
-
-
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
@@ -73,3 +72,5 @@ if (span) {
         modal.style.display = "none";
     });
 }
+
+let deletemodal = document.getElementById("id01");

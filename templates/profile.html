@@ -33,11 +33,23 @@
                         class="fas fa-pencil-alt"></i></a>
             </li>
             <li>
-                <a class="btn-floating btn-small red" href="{{ url_for('delete_post', post_id=post._id) }}"><i
+                <a class="btn-floating btn-small red" onclick="document.getElementById('id01').style.display='block'" ><i
                         class="fas fa-trash-alt"></i></a>
             </li>
         </ul>
+        <div id="id01" class="delete-modal">
+            <div class="delete-modal-content white container">
+                <p>Are you sure you want to delete this post?</p>
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="btn-small blue">No</button>
+                    <a href="{{ url_for('delete_post', post_id=post._id) }}"
+                        onclick="document.getElementById('id01').style.display='none'" class="btn-small red">Yes, delete!</a>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="card-content">
         <p><em>Created by: {{ post.created_by }}</em></p>
         <p><em>In category: {{ post.category_name }}</em></p>
@@ -89,6 +101,4 @@
     {% endif %}
     {% endfor %}
 </div>
-
-
 {% endblock %}

@@ -74,9 +74,6 @@ main {
     -ms-flex-align: center;
     align-items: center;
 }
-.materialert .material-icons{
-    margin-right: 10px;
-}
 .materialert .close-alert{
     -webkit-appearance: none;
     border: 0;
@@ -97,7 +94,7 @@ main {
 .materialert.warning{
     background-color: #fbc02d;
     color: #fff;
-    text-align: center;
+    align-items:center;
 }
 
 button{
@@ -239,6 +236,31 @@ em{
     width: 100%;
   }
 }
+
+
+/* Post deletion confirmation modal styling    from:https://www.w3schools.com/howto/howto_css_delete_modal.asp */
+
+.delete-modal {
+  display: none; 
+  position: fixed;  
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  max-height: 100%; 
+  overflow: auto;    
+}
+/* Modal Content/Box */
+.delete-modal-content {
+  margin: 5% auto 15% auto; 
+  border: 2px solid red;
+  border-radius: 4px;
+  width: 50%; 
+  padding: 16px;
+  text-align: center;
+}
+
 /*--footer--*/
 .page-footer{
     color:#F8E71C;
