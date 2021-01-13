@@ -32,7 +32,7 @@ nav ul a:hover{
     padding: 0 15px 0 0;
 }
 
-/*--body--*/
+/*body-*/
 h3, h4, h5{
     font-family: 'Delius', cursive;
     margin: 80px 0;
@@ -54,6 +54,7 @@ body {
 main {
     flex: 1 0 auto;
 }
+/*Flash messages */
 
 .materialert{
     position: relative;
@@ -80,7 +81,6 @@ main {
     cursor: pointer;
     color: inherit;
     background: 0 0;
-    font-size: 22px;
     line-height: 1;
     font-weight: bold;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
@@ -91,11 +91,12 @@ main {
     right: 5px;
 }
 
-.materialert.warning{
-    background-color: #fbc02d;
-    color: #fff;
-    align-items:center;
+.materialert.info{
+    background-color: #039be5;
+    color: yellow;
 }
+
+/*buttons*/
 
 button{
     font-family:'Delius', cursive;
@@ -116,6 +117,9 @@ button{
 #delete-button{
     margin: 20px 0;
 }
+
+/* Post styling*/
+
 .post-content{
     font-size: 15px;
     margin-top:80px;
@@ -175,7 +179,6 @@ em{
 
 #myImg:hover {opacity: 0.7;}
 
-/* The Modal (background) */
 .modal {
   display: none; 
   position: fixed;  
@@ -190,7 +193,6 @@ em{
   background-color: rgba(0,0,0,0.9); 
 }
 
-/* Modal Content (image) */
 .modal-content {
   margin: auto;
   display: block;
@@ -238,7 +240,7 @@ em{
 }
 
 
-/* Post deletion confirmation modal styling    from:https://www.w3schools.com/howto/howto_css_delete_modal.asp */
+/* Post deletion confirmation modal from:https://www.w3schools.com/howto/howto_css_delete_modal.asp */
 
 .delete-modal {
   display: none; 
@@ -251,7 +253,7 @@ em{
   max-height: 100%; 
   overflow: auto;    
 }
-/* Modal Content/Box */
+
 .delete-modal-content {
   margin: 5% auto 15% auto; 
   border: 2px solid red;
@@ -261,7 +263,7 @@ em{
   text-align: center;
 }
 
-/*--footer--*/
+/* footer */
 .page-footer{
     color:#F8E71C;
     font-family: 'Delius', cursive;

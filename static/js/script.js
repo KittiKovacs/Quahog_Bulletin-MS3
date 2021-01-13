@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-let modal = document.getElementById("myModal")
+let modal = document.getElementById("myModal");
 
 // Get the image inside the modal
 let img = document.getElementById("myImg");

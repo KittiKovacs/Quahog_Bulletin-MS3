@@ -20,11 +20,11 @@
                     {% if session.user|lower == "admin"|lower %}
                     <option>Announcements</option>
                     {% else %}
-                    {% for category in categories %}
-                    {% if category.category_name!="Announcements" %}
-                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                    {% endif %}
-                    {% endfor %}
+                        {% for category in categories %}
+                            {% if category.category_name!="Announcements" %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
                 </select>
             </div>
@@ -60,10 +60,10 @@
             </div>
 
             <!-- post image -->
-            <div class="row img-details">
-                <div class="col s12 l6">
+            <div class="row img-details center-align">
+                <div class="col s12">
                     {% if post.post_image %}
-                    <img src="{{url_for('img_uploads', filename=post['post_image'])}}" alt="post_image">
+                    <img src="{{url_for('img_uploads', filename=post['post_image'])}}" id="myImg" alt="post_image">
                     {% endif %}
                 </div>
             </div>

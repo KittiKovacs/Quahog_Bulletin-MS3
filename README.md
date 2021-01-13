@@ -14,9 +14,9 @@ https://quahog-bulletin.herokuapp.com/
 
 ### Project goals 
 
-The purpose of the project is to create an online platform for the citizens as well as the council (admin) of the fictional city of Quahog to create posts in certain categories- much like they would on a real-life bulletin board. 
+The purpose of the project is to create an online platform for the inhabitants of the fictional city of Quahog to create posts in certain categories- much like they would put their flyers or posters on a real-life bulletin board. 
 
-This way the registered user can easily get involved in and contribute to the life of their community. They can look for updates from the local council; they can post ads and invitations to events, clubs, goups and so on. They can offer and ask for help and put their possessions up for sale.
+This way the registered user can easily take part in the life of their community. They can look for updates from the local council; they can post ads and invitations to events, clubs, goups and so on. They can offer and ask for help and put their possessions up for sale.
 
 Unregistered users can still view the post but the site doesn't allow them to create their own posts or to save them for later.
 
@@ -64,7 +64,7 @@ Buttons with different functions have different colours for better user experien
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/edit-page.JPG">
 
 
-The design is responsive on all viewports with the menu displaying as a sidenav on medium and below.
+The design is responsive on all viewports with the menu displaying as a sidenav on medium screen size and below.
 
 <img src="https://github.com/KittiKovacs/Quahog_Bulletin-MS3/blob/master/static/img/design/responsive-home.JPG">
 
@@ -76,7 +76,7 @@ The design is responsive on all viewports with the menu displaying as a sidenav 
 
 ### Wireframes
 
-There are some differences between the wireframes I created initially and the completed project, because sometimes I found a better way to execute the initial ideas during development.
+There are some differences between the wireframes I initially crated and the completed project, because sometimes I found a better way to execute my ideas during development.
 
 **Homepage**
 
@@ -211,6 +211,8 @@ There are some differences between the wireframes I created initially and the co
 
 - The delete icon (trashcan) appears when they hover over the Floating Action Button.
 
+- On clicking the icon a popup message appears asking for confirmation.
+
 - The app displays a flash message to let the user know that the post has been deleted.
 
 
@@ -236,14 +238,14 @@ There are some differences between the wireframes I created initially and the co
 
 - Add pagination.
 
-- Add a comment section whereby the users can have a conversation with each other.
+- Add a comment section where the users can have a conversation with each other.
 
 
 ## Information architecture
 
 ### Database Choice
 
-I am using MongoDb Atlas as a database for my project.
+I am using MongoDb Atlas as a database for my project. I created a new database within Mongo and added 3 collections: categories, users and posts as seen in the schema below. 
 
 ### Data modelling
 
@@ -271,7 +273,7 @@ I am using MongoDb Atlas as a database for my project.
 
 ### Tools
 
-- Balsamiq for creating wireframes
+- Balsamiq app for creating wireframes.
 
 - [Am I responsive?](http://ami.responsivedesign.is/) to demonstrate responsiveness in this README file.
 
@@ -297,23 +299,23 @@ The app has been tested on mobile versions of Google Chrome and Safari and works
 
 ### Testing against the user stories
 
-As user 1 I am able to create new posts in different categories from my profile or the category's page.
+As user 1 I am able to create new posts in different categories from my profile or the category's page by clicking on the Create post icon. I am taken to the Create Post page where I can fill in a form and upload an image.
 
-As user 2 I am able to upload a photo to my post from my computer when creating or editing the post.
+As user 2 I am able to upload a photo to my post from my computer when creating or editing the post by clicking on the Upload image button.
 
-As user 3 I can edit or delete my posts.
+As user 3 I can edit or delete my posts. I can access these features from my my Profile page in the My posts section by hovering over the Floating Action Button in the top left corner of each post and choosing the relevant icon. Alternatively, I can view my post and access these options from here.
 
-As user 4 I can see announcements created by the city council by clicking on the relevant link on the Boards page or in the navbar.
+As user 4 I can see announcements created by the city council by clicking on the Announcements link on the Boards page or in the navbar. I am not able to create a new post in this category.
 
-As user 5 I can to see what other users posted in each category by selecting the relevant category's page. Each post is displayed on a card on a light yellow background and contains a link which allows me to read the full post.
+As user 5 I can to see what other users posted in each category by selecting the relevant category's page from the navigation bar's dropdown or from visiting the Boards page (see all  navigation option). Each post is displayed on a card on a light yellow background and contains a link which takes me to a page where I can read the full post.
 
-As user 6 I can save other users' posts by moving my mouse over the floating action button and clicking on the save icon. They are displayed in my profile page from where I can remove them
+As user 6 I can save other users' posts by moving my mouse over the floating action button on the top left of the card and clicking on the save icon. They are displayed in my profile page from where I can remove them in the same fashion, by clicking the - button.
 
-As user 7 I can see who created each post just by looking at each card or clicking on "view post".
+As user 7 I can see who created each post just by looking at each card or clicking on "view post" to reveal the full post content.
 
-As Admin I can create a new category from the Boards page and upload a cover image for the card representing the category.
+As Admin I can create a new category from the Boards page and upload a cover image for the card representing the category. As Admin I also have an extra icon in the navigation bar "Create category".
 
-As user 9 who is in a hurry I can use the search field on the category's page to filter the posts for certain keywords.
+As user 9 who is in a hurry I can use the search field on each category's page to filter the posts for certain keywords. I can save posts as favorites so I can find them easily later on my Profile page.
 
 As  user 10 who is not a resident I am allowed see what's going on in the city without logging in. I have access to categories and can view the posts, however I can't interact with them as registered users can.
 
@@ -393,14 +395,14 @@ I used Gitpod to track changes in the website by making regular commits with des
 
 I added the below code to the end of the app.py file and changed debug=False when I finished development.
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    if __name__ == "__main__":
+        app.run(host=os.environ.get("IP"),
+                port=int(os.environ.get("PORT")),
+                debug=True)
 
 ### Heroku deployment
 
-The project is deployed to Heroku. https://quahog-bulletin.herokuapp.com/ . In order to do this I closely followed the tutorial videos on Heroku which are part of the course.
+The project is deployed to Heroku: https://quahog-bulletin.herokuapp.com/ . In order to do this I closely followed the tutorial videos on Heroku which are part of the course.
 
 First I created a new app in Heroku called quahog-bulletin. 
 
@@ -408,11 +410,11 @@ I installed Heroku in my project by using the Heroku CLI in the terminal and log
 
 I created requirements.txt and Procfile that Heroku requires to run the app:
 
-  pip3 freeze -- local > requirements.txt
+    pip3 freeze -- local > requirements.txt
 
-  echo web: python app.py > Procfile
+    echo web: python app.py > Procfile
   
-  I pushed both files to GitHub then enabled automatic deploys to the master branch.
+I pushed both files to GitHub then enabled automatic deploys to the master branch.
  
 I connected Git remote to Heroku and pushed everything to Heroku master: git push -u heroku master
 
@@ -433,10 +435,17 @@ I watched tutorial videos such as the [Pretty Printed](https://www.youtube.com/c
 
 I also used the [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data) when doing my research.
 
+I used code snippets from [Materialize](https://materializecss.com/) to build the website. 
+
+My code for creating alert is from [Stack Overflow](https://stackoverflow.com/questions/38156282/create-alert-using-materialize-css/38158050#38158050).
+
+Delete modal [from W3 Schools](https://www.w3schools.com/howto/howto_css_delete_modal.asp).
+
 ### Content and Media
 
 The user's names and city hall image are from the [Family Guy fanpage](https://familyguy.fandom.com/wiki/Family_Guy:_The_Top_20_Characters)
-Images from Freepik.com and Icons8.com.
+
+Card cover images are from [Freepik.com](https://www.freepik.com/), menu icons from  [Icons8.com](https://icons8.com/).
 
 
 ## Acknowledgements
