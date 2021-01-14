@@ -406,22 +406,21 @@ The project is deployed to Heroku: https://quahog-bulletin.herokuapp.com/ . In o
 
 First I created a new app in Heroku called quahog-bulletin. 
 
-I installed Heroku in my project by using the Heroku CLI in the terminal and logged into Heroku. 
-
 I created requirements.txt and Procfile that Heroku requires to run the app:
 
     pip3 freeze -- local > requirements.txt
 
     echo web: python app.py > Procfile
-  
-I pushed both files to GitHub then enabled automatic deploys to the master branch.
+
+I pushed both files to GitHub.
+
+Then on the Deploy tab in Heroku I enabled automatic deploys to the master branch:
+
+First I clicked on Connect to Github, added my repository name and  clicked connect.
  
-I connected Git remote to Heroku and pushed everything to Heroku master: git push -u heroku master
+Then in the Heroku app's settings (Config Vars) I've added my environmental variables for the IP, PORT, MONGODB_URI and SECRET_KEY. 
 
-In the  Heroku app's settings (Config Vars) I've added my environmental variables for the IP, PORT, MONGODB_URI and SECRET_KEY
-
-Now the automatic deployment is set up I removed Heroku remote on Github: git remote rm heroku.
-
+Then back on the Deploy tab I clicked Enable automatic deployment and clicked Deploy branch. I waited funtil Heroku notified me that the app was successfully deployed.
 
 ## Credits
 
