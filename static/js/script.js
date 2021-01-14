@@ -73,4 +73,4 @@ if (span) {
     });
 }
 
-let deletemodal = document.getElementById("id01");
+let deletemodal = document.getElementById("delete{{loop.index}}");
