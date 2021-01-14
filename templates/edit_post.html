@@ -15,7 +15,7 @@
             <!--category selection-->
             <div class="input-field">
                 <i class="fas fa-list prefix dark-blue-text text-darken-4"></i>
-                <select id="category_name" name="category_name" class="validate">
+                <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose a board for your post</option>
                     {% if session.user|lower == "admin"|lower %}
                     <option>Announcements</option>
@@ -28,24 +28,28 @@
                     {% endif %}
                 </select>
             </div>
+
             <!-- Post title -->
             <div class="input-field">
-                <input id="post-title" name="title" type="text" minlength="5" maxlength="50" value=" {{ post.title }}"
-                    class="validate">
+                <input id="post-title" name="title" type="text" minlength="2" maxlength="50" value=" {{ post.title }}"
+                    class="validate" required>
                 <label for="title">Title</label>
             </div>
+
             <!-- description -->
             <div class="input-field">
-                <input id="description" name="description" class="materialize-textarea validate" minlength="5"
-                    maxlength="500" value="{{- post.description -}}">
+                <input id="description" name="description" class="materialize-textarea validate" minlength="2"
+                    maxlength="500" value="{{- post.description -}}" required>
                 <label for="description">Description</label>
             </div>
+
             <!--contact details-->
             <div class="input-field">
                 <input id="contact_details" name="contact_details" type="text" class="materialize-textarea validate"
                     minlength="5" maxlength="500" value="{{- post.contact_details -}}">
                 <label for="contact_details">Contact details</label>
             </div>
+
             <!--image upload-->
             <div class="row img-details">
                 <div class="file-field input-field">
