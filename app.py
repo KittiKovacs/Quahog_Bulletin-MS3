@@ -18,7 +18,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app)   #connect to Mongo
+mongo = PyMongo(app)   # connect to Mongo
 
 
 @app.route('/')
@@ -254,7 +254,6 @@ def delete_post(post_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
-
 # Add post to User's favorite posts
 
 
@@ -336,16 +335,6 @@ def edit_category(category_id):
     categories = list(mongo.db.categories.find())
     return render_template(
         "edit_category.html", categories=categories, category=category)
-
-
-# Delete a category
-
-
-@app.route("/delete_category/<category_id>")
-def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category deleted")
-    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

@@ -220,7 +220,7 @@ There are some differences between the wireframes I initially crated and the com
 
 - Admin user is able to create posts on the Announcements page or from their profile page. They don't have access to any other categories from the dropdown list.
 
-- They are also able to create, edit or delete categories as well as posts. There is an additional menu item available for Admin only named Create Board that serves this purpose.
+- They are also able to create or edit categories as well as posts. There is an icon on the page and also an additional menu item named Create Board available for Admin only that serves this purpose.
 
 
 #### Error handling
@@ -234,7 +234,7 @@ There are some differences between the wireframes I initially crated and the com
 
 - Allow users to delete their account.
 
-- Allow Admin to manage users and posts.
+- Allow Admin to manage users and posts and delete categories.
 
 - Add pagination.
 
