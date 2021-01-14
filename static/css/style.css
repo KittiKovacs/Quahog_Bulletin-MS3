@@ -91,9 +91,13 @@ main {
     right: 5px;
 }
 
-.materialert.info{
+.materialert.info {
     background-color: #039be5;
     color: yellow;
+    max-width: max-content;
+    padding-right: 50px;
+    float: right;
+    margin-right: 15px;
 }
 
 /*buttons*/

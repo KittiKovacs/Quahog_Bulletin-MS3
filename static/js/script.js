@@ -42,6 +42,23 @@ $(document).ready(function () {
             }
         });
     }
+
+    const modalOkBtn = document.getElementById('modal-ok-btn');
+
+    /** All remove button that require the modal dialogs should have the class remove-btn added */
+    $('.remove-btn').click((event) => {
+        const modal = document.getElementById('confirmation-dialog');
+        const instance = M.Modal.init(modal, { dismissible:false });
+        instance.open();
+
+        if (event.currentTarget.tagName === "I") {
+            modalOkBtn.href = event.currentTarget.parentNode.href;
+        } else {
+            modalOkBtn.href = event.currentTarget.href;
+        }
+
+        return false;
+    });
 });
 
 // Fixed action button
@@ -72,5 +89,3 @@ if (span) {
         modal.style.display = "none";
     });
 }
-
-let deletemodal = document.getElementById("delete{{loop.index}}");
