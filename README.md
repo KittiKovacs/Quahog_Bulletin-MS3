@@ -348,10 +348,6 @@ I first specified which category the Admin user should have access to by using a
 To create an option for marking posts as favorites and displaying them on the User's profile page I required guidance from my Mentor as I wasn't able to find a useful example that I could study.
 The solution was to create a new key-value pair in the user object "favorite_posts" which takes the post_ids as values. This is used in the save_post function in the application so that if the save button is clicked it updates the user's object.
 
-#### Post deletion
-After adding a modal that asks the user to confirm they want to delete the post I noticed that it's not deleting the post I intended to delete, but the first one in the list.
-This was caused by the fact that the posts are created in a loop. I overcame this by using id="delete{{loop.index}}" as the id of the modal which gives a different number at the end of delete for every modal that's created in the loop.
-
 ## Deployment
 
 ### Local deployment
@@ -438,11 +434,10 @@ I watched tutorial videos such as the [Pretty Printed](https://www.youtube.com/c
 
 I also used the [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data) when doing my research.
 
-I used code snippets from [Materialize](https://materializecss.com/) to build the website. 
+I used code snippets from [Materialize](https://materializecss.com/) to build the website including navigation, modals and cards. 
 
 My code for creating alert is from [Stack Overflow](https://stackoverflow.com/questions/38156282/create-alert-using-materialize-css/38158050#38158050).
 
-Delete modal [from W3 Schools](https://www.w3schools.com/howto/howto_css_delete_modal.asp).
 
 ### Content and Media
 

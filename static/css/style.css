@@ -244,7 +244,7 @@ em{
 }
 
 
-/* Post deletion confirmation modal from:https://www.w3schools.com/howto/howto_css_delete_modal.asp */
+/* Post deletion confirmation modal from:https://materializecss.com/modals.html */
 
 .delete-modal {
 z-index: 1003;
