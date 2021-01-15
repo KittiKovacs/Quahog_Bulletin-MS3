@@ -225,7 +225,7 @@ There are some differences between the wireframes I initially crated and the com
 
 #### Error handling
 
-- I created templates and routes to handle 404 and 500 errors.
+- I created templates and routes for handling 404 and 500 errors and to give the users customized feedback of the error.
 
 
 ### Features left to implement
@@ -420,21 +420,19 @@ First I clicked on Connect to Github, added my repository name and  clicked conn
  
 Then in the Heroku app's settings (Config Vars) I've added my environmental variables for the IP, PORT, MONGODB_URI and SECRET_KEY. 
 
-Then back on the Deploy tab I clicked Enable automatic deployment and clicked Deploy branch. I waited funtil Heroku notified me that the app was successfully deployed.
+Then back on the Deploy tab I clicked Enable automatic deployment and clicked Deploy branch. I waited until Heroku notified me that the app was successfully deployed.
 
 ## Credits
 
 ### Code
 
-During the development I heavly relied on the Data Centric Development course material, more specifically I used many solutions I learned from the the Task Manager and Thorin and company projects.
+During the development I relied on the Data Centric Development course material, I used many solutions I learned from the the Task Manager and Thorin and company projects.
 
-Another important source was the Materialize style library which I found easy to work with and I was very happy with the result.
+Another important source was the [Materialize style library](https://materializecss.com/) which I found easy to work with. I used code from here to build navigation, modals and cards. 
 
 I watched tutorial videos such as the [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) Youtube channel and the following source: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world.
 
 I also used the [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data) when doing my research.
-
-I used code snippets from [Materialize](https://materializecss.com/) to build the website including navigation, modals and cards. 
 
 My code for creating alert is from [Stack Overflow](https://stackoverflow.com/questions/38156282/create-alert-using-materialize-css/38158050#38158050).
 
