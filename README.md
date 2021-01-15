@@ -381,6 +381,7 @@ I created the app.py file and added the import env as well and added the depende
     from flask_pymongo import PyMongo
     from bson.objectid import ObjectId
     from werkzeug.security import generate_password_hash, check_password_hash
+    from werkzeug.exceptions import HTTPException
     if os.path.exists("env.py"):
         import env
 
